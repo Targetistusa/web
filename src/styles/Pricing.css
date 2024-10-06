@@ -1,0 +1,109 @@
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows the cards to wrap on smaller screens */
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #ffffff;
+    z-index: 10;
+    position: relative;
+    margin-bottom: 10%;
+}
+
+.pricing-card {
+    background-color: #fff;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0px 8px rgba(174, 75, 255, 0.563);
+    padding: 20px;
+    text-align: center;
+    transition: border 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 30%; /* Adjust width for better responsiveness */
+    height: 400px; /* Ensures even sizing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin: 10px; /* Adds spacing between cards */
+}
+
+.pricing-card.highlighted {
+    background-color: #6d05c8;
+    color: #fff;
+}
+
+.pricing-card.highlighted .price {
+    color: #fff;
+}
+
+.pricing-card:hover {
+    border-color: #ff00cc;
+    box-shadow: 0 0 10px rgba(255, 0, 204, 0.5);
+    transform: scale(1.05);
+}
+
+.pricing-card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.pricing-card .price {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.pricing-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .pricing-card {
+        width: 45%; /* Adjust width for medium screens */
+        height: 350px; /* Adjust height for medium screens */
+    }
+
+    .pricing-card h2 {
+        font-size: 1.8rem; /* Adjust font size for medium screens */
+    }
+
+    .pricing-card .price {
+        font-size: 3.5rem; /* Adjust font size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-card {
+        width: 100%; /* Full width for small screens */
+        height: auto; /* Auto height for small screens */
+    }
+
+    .pricing-card h2 {
+        font-size: 1.5rem; /* Adjust font size for small screens */
+    }
+
+    .pricing-card .price {
+        font-size: 3rem; /* Adjust font size for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-card {
+        padding: 15px; /* Reduce padding for very small screens */
+    }
+
+    .pricing-card h2 {
+        font-size: 1.2rem; /* Adjust font size for very small screens */
+    }
+
+    .pricing-card .price {
+        font-size: 2.5rem; /* Adjust font size for very small screens */
+    }
+
+    .pricing-card p {
+        font-size: 0.9rem; /* Adjust font size for very small screens */
+    }
+}

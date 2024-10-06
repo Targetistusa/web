@@ -1,0 +1,63 @@
+{
+  "name": "targetist",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@fortawesome/react-fontawesome": "^0.2.1",
+    "@lottiefiles/react-lottie-player": "^3.5.3",
+    "@lottielab/lottie-player": "^1.0.3",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.12",
+    "particles-bg": "^2.5.5",
+    "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1",
+    "react-intersection-observer": "^9.10.3",
+    "react-mailchimp-subscribe": "^2.1.3",
+    "react-responsive-modal": "^6.4.2",
+    "react-scripts": "5.0.1",
+    "react-scroll": "^1.9.0",
+    "react-use-measure": "^2.1.1",
+    "reactjs-popup": "^2.0.6",
+    "rodal": "^2.1.0",
+    "sweetalert2": "^11.11.0",
+    "tailwind-merge": "^2.3.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-mailchimp-subscribe": "^2.1.4",
+    "@types/react-scroll": "^1.8.10",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4"
+  }
+}

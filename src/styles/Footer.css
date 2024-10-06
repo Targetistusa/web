@@ -1,0 +1,90 @@
+.dock-footer {
+    background-color: #ffffff;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    z-index: 10;
+}
+
+.dock-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffffde;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    width: 50%;
+}
+
+.dock-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin: 0 5px; /* Adjusted margin */
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.dock-item img {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 1200px) {
+    .dock-container {
+        width: 60%;
+    }
+
+    .dock-item {
+        width: 45px;
+        height: 45px;
+    }
+
+    .dock-item img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dock-container {
+        width: 70%;
+    }
+
+    .dock-item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .dock-item img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dock-container {
+        flex-direction: row; /* Stack items vertically on small screens */
+        padding: 5px 10px;
+    }
+
+    .dock-item {
+        width: 35px;
+        height: 35px;
+        margin: 5px 0; /* Adjust margin for vertical stacking */
+    }
+
+    .dock-item img {
+        width: 18px;
+        height: 18px;
+    }
+}

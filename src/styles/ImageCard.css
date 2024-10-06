@@ -1,0 +1,66 @@
+.image-wrapper {
+  position: relative;
+  height: 200vh;
+  background-color: #282c34 !important;
+}
+
+/*.image-container {*/
+/*  width: 100%;*/
+
+/*  overflow: hidden;*/
+/*  background: rgba(255, 255, 255, 0.2);*/
+/*  border-radius: 30px;*/
+/*  background-color: aqua;*/
+/*  position: relative; !* Maintain the relative positioning *!*/
+/*}*/
+.image-container-outer{
+  position: sticky;
+  top: 0;
+  height: 105vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #9b24c6 !important;
+}
+
+
+.text {
+  font-size: xx-large;
+  color: aliceblue;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+}
+
+.text1 {
+  font-size: xx-large;
+  color: aliceblue;
+  font-weight: bold;
+  position: relative;
+
+  left: 40%;
+  z-index: 10;
+  margin-left: 10vw;
+}
+@media screen and (min-width: 769px) {
+  .text1{
+    position: absolute;
+    top: 50%;
+    left: 90%;
+  }
+}
+.text-overlay {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 60vh;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This will place them at the edges */
+  align-items: center; /* Align vertically in the center */
+}

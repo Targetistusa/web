@@ -1,0 +1,186 @@
+.features-section {
+    color: rgb(255, 255, 255);
+    background-color: rgb(223, 183, 250);
+    padding: 4rem;
+    overflow: hidden; 
+    position: relative; 
+    z-index: 100;
+    background-color: #f9ecff; 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding: 0;
+    max-width: 1300px; 
+}
+
+@media screen and (max-width:768px) {
+    .features-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.AS_card_text {
+    margin-top: 18rem;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    color: #5a00c7;
+}
+
+@media screen and (min-width:800px) and (max-width: 1000px) {
+    .AS_card_text {
+        margin-top: 1rem;
+        font-size: 25px;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        text-align: center;
+        color: #5a00c7;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    background-color: #fff; 
+    backdrop-filter: blur(9px) saturate(110%);
+    -webkit-backdrop-filter: blur(9px) saturate(110%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    position: relative; 
+    transition: transform 0.5s, box-shadow 0.5s; 
+    transform-style: preserve-3d; 
+    z-index: 1;
+}
+
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: transform 0.8s, box-shadow 0.5s; 
+}
+
+.feature-card.flipped {
+    transform: rotateY(180deg); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.feature-card.flipped::after {
+    transform: rotateY(0deg); 
+    background-color: white; 
+}
+
+.heading {
+    font-family: "Roboto", sans-serif;
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    background: -webkit-radial-gradient(rgb(141, 0, 252), rgb(255, 0, 123));
+    background-clip: inherit;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    align-items: left;
+}
+
+.feature-card.AS_card {
+    grid-row: span 2;
+}
+
+.feature-card img {
+    width: 80%; 
+    transition: transform 0.2s ease-in-out;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.feature-card .card-text {
+    margin-top: 1rem;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    color: #5a00c7;
+}
+
+@media (max-width: 1000px) {
+   .feature-card .card-text {
+       text-align: center;
+       padding-left: 2.5rem;
+       font-size: 25px;
+   }
+}
+
+/* Responsive grid columns for larger screens */
+@media screen and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Single column layout for mobile devices */
+@media screen and (max-width: 767px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .heading {
+        font-size: 2.5rem; /* Smaller font size for mobile */
+        text-align: center;
+    }
+
+    .feature-card .card-text {
+        font-size: 20px; /* Smaller font size for mobile */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .feature-card img {
+        width: 60%; /* Adjust image size for mobile */
+    }
+
+    .AS_card_text {
+        margin-top: 1rem;
+        font-size: 20px; /* Smaller font size for mobile */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.closeButton {
+    position: sticky;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+}
+
+.alertAnimation {
+    animation: ease-out 0.4s !important;
+}

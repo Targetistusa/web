@@ -1,0 +1,29 @@
+
+  
+  .header {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #9859b0;
+  }
+  
+  .content {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .actions .button {
+    background-color: #ff5e57;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .actions .button:hover {
+    background-color: #ff3b30;
+  }
+  

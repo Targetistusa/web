@@ -1,0 +1,86 @@
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: transform 0.2s ease-out; /* Smooth scaling transition */
+}
+
+.blur-text {
+    width: auto;
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 1s ease-out, filter 1s ease-out;
+}
+@media screen and (max-width:1000px) {
+    .blur-text {
+        width: 50%;
+        font-size: 2rem;
+        font-weight: bold;
+        opacity: 0;
+        filter: blur(10px);
+        transition: opacity 1s ease-out, filter 1s ease-out;
+        text-align: center;
+    }
+}
+.blur-text.blur-in {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #d91fb8, #7c2df8);
+    background-clip:content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pro-text {
+    display: inline-block;
+    opacity: 0;
+    transform: rotateY(0deg);
+    transition: opacity 1s ease-out;
+}
+
+.rotate-in {
+    opacity: 1;
+    animation: spin 1s ease-out forwards;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(360deg);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .blur-text {
+        font-size: 1.5rem; /* Smaller font size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .blur-text {
+        font-size: 1.2rem; /* Smaller font size for mobile screens */
+        text-align: center; /* Center text alignment */
+        padding: 0 1rem; /* Add some padding for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .blur-text {
+        font-size: 1rem; /* Even smaller font size for very small screens */
+    }
+
+    .pro-text {
+        font-size: 1.5rem; /* Adjust PRO text size for very small screens */
+    }
+}

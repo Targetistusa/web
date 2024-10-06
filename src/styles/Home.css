@@ -1,0 +1,178 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #fff; /* Background color */
+  /* Layer 1: Radial gradient for fading effect */
+  background-image: radial-gradient(circle at center, rgba(180, 52, 240, 0) 30%, rgba(255, 255, 255, 1) 100%),
+                    /* Layer 2: Dot pattern */
+                    radial-gradient(circle, rgba(57, 9, 70, 0.504) 3%, transparent 10%);
+  background-size: cover, 30px 30px; /* Cover for fading, specific size for dots */
+  background-repeat: no-repeat, repeat; /* No repeat for fading, repeat for dots */
+}
+
+.top-button {
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f0f0da;
+  color: #333333ac;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 1.6rem;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem; /* Add some space between the top button and the main content */
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: linear-gradient(to right, #e0c3fc, #8ec5fc);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-button:hover {
+  color: #530a7e;
+  border-color: #ff00cc;
+  box-shadow: 0 0 10px rgba(255, 0, 204, 0.5), 0 0 20px rgba(255, 0, 204, 0.5);
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem; /* Adjusts spacing from the heading */
+}
+
+.email-input {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  margin-right: 0.5rem;
+  flex: 1;
+  outline: none;
+  transition: border-color 0.4s ease; /* Smooth transition for border color */
+}
+
+.email-input:focus {
+  border-color: black; /* 1px solid black border on focus */
+}
+
+
+.request-button {
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(163, 25, 163);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 0.6rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border: none;
+}
+
+.request-button:hover {
+  background-color: #000000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* .button {
+  font-family: "Roboto", sans-serif;
+  background-color: #A200FF;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  border-radius: 0.9rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem; 
+  box-shadow: 0 0 10px #A200FF, 0 0 10px #A200FF inset; 
+  border-color: transparent;
+}
+
+.button:hover {
+  background-color: #530a7e;
+  box-shadow: 0 0 20px #A200FF, 0 0 40px #A200FF, 0 0 80px #A200FF, 0 0 20px #A200FF inset, 0 0 40px #A200FF inset, 0 0 80px #A200FF inset; 
+  border-color: transparent;
+} */
+
+.heading {
+  font-family: "Roboto", sans-serif;
+  font-size: 4.8rem;
+  font-weight: bold;
+  background: -webkit-radial-gradient(rgb(141, 0, 252), rgb(255, 0, 123));
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  align-items: center;
+}
+
+.heading02 { 
+  font-family: "Roboto", sans-serif;
+  margin-top: -3rem;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  background: -webkit-linear-gradient(rgb(141, 0, 252), rgb(255, 0, 123));
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  align-items: center;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 3rem; /* Smaller font size for headings on small screens */
+  }
+
+  .heading02 {
+    font-size: 2.5rem; /* Smaller font size for headings on small screens */
+    margin-top: -1.5rem; /* Adjust margin for smaller screens */
+  }
+
+  .button {
+    font-size: 1rem; /* Smaller font size for the button */
+    padding: 0.75rem 1.5rem; /* Smaller padding for the button */
+  }
+
+  .top-button {
+    font-size: 1rem; /* Smaller font size for the top button */
+    padding: 0.5rem 1rem; /* Smaller padding for the top button */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+    font-size: 2.5rem; /* Even smaller font size for headings on very small screens */
+  }
+
+  .heading02 {
+    font-size: 2rem; /* Even smaller font size for headings on very small screens */
+    margin-top: -1rem; /* Adjust margin for very small screens */
+  }
+
+  .button {
+    font-size: 0.875rem; /* Even smaller font size for the button */
+    padding: 0.5rem 1rem; /* Even smaller padding for the button */
+  }
+
+  .top-button {
+    font-size: 0.875rem; /* Even smaller font size for the top button */
+    padding: 0.5rem 1rem; /* Smaller padding for the top button */
+  }
+}
