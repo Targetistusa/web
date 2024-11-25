@@ -3,16 +3,57 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding-top: 5rem;
   overflow: hidden;
-  background-color: #fff; /* Background color */
-  /* Layer 1: Radial gradient for fading effect */
+  background-color: #fff;
   background-image: radial-gradient(circle at center, rgba(180, 52, 240, 0) 30%, rgba(255, 255, 255, 1) 100%),
-                    /* Layer 2: Dot pattern */
                     radial-gradient(circle, rgba(57, 9, 70, 0.504) 3%, transparent 10%);
-  background-size: cover, 30px 30px; /* Cover for fading, specific size for dots */
-  background-repeat: no-repeat, repeat; /* No repeat for fading, repeat for dots */
+  background-size: cover, 30px 30px;
+  background-repeat: no-repeat, repeat;
+}
+
+.card {
+  width: 90%;
+  height: 90%;
+  max-height: 900px;
+  max-width: 900px;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  opacity: 0; /* Start hidden for fade-in effect */
+  transition: opacity 0.5s ease-out, transform 0.3s ease-out; /* Smooth fade-in and scaling transition */
+  transform: scale(1); /* Default scale for zoom effect */
+}
+
+/* Ensure the image scales with the card */
+.card img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease-out; /* Smooth scaling transition for the image */
+}
+
+/* Apply animation when the card is visible */
+.fade-in {
+  animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Slight upward movement for the fade-in */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .top-button {
@@ -28,7 +69,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin-bottom: 2rem; /* Add some space between the top button and the main content */
+  margin-top: 5rem;
+  margin-bottom: 2rem;
   cursor: pointer;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   color: linear-gradient(to right, #e0c3fc, #8ec5fc);
@@ -40,73 +82,6 @@
   border-color: #ff00cc;
   box-shadow: 0 0 10px rgba(255, 0, 204, 0.5), 0 0 20px rgba(255, 0, 204, 0.5);
 }
-
-.email-container {
-  display: flex;
-  align-items: center;
-  margin-top: 2rem; /* Adjusts spacing from the heading */
-}
-
-.email-input {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  padding: 0.8rem 1.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.6rem;
-  margin-right: 0.5rem;
-  flex: 1;
-  outline: none;
-  transition: border-color 0.4s ease; /* Smooth transition for border color */
-}
-
-.email-input:focus {
-  border-color: black; /* 1px solid black border on focus */
-}
-
-
-.request-button {
-  font-family: "Roboto", sans-serif;
-  background-color: rgb(163, 25, 163);
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0.8rem 2rem;
-  border-radius: 0.6rem;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  border: none;
-}
-
-.request-button:hover {
-  background-color: #000000;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-
-/* .button {
-  font-family: "Roboto", sans-serif;
-  background-color: #A200FF;
-  color: white;
-  font-weight: bold;
-  font-size: 1.3rem;
-  padding: 1rem 2rem;
-  border-radius: 0.9rem;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-  align-self: center;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: 1rem; 
-  box-shadow: 0 0 10px #A200FF, 0 0 10px #A200FF inset; 
-  border-color: transparent;
-}
-
-.button:hover {
-  background-color: #530a7e;
-  box-shadow: 0 0 20px #A200FF, 0 0 40px #A200FF, 0 0 80px #A200FF, 0 0 20px #A200FF inset, 0 0 40px #A200FF inset, 0 0 80px #A200FF inset; 
-  border-color: transparent;
-} */
 
 .heading {
   font-family: "Roboto", sans-serif;
@@ -145,11 +120,6 @@
     margin-top: -1.5rem; /* Adjust margin for smaller screens */
   }
 
-  .button {
-    font-size: 1rem; /* Smaller font size for the button */
-    padding: 0.75rem 1.5rem; /* Smaller padding for the button */
-  }
-
   .top-button {
     font-size: 1rem; /* Smaller font size for the top button */
     padding: 0.5rem 1rem; /* Smaller padding for the top button */
@@ -164,11 +134,6 @@
   .heading02 {
     font-size: 2rem; /* Even smaller font size for headings on very small screens */
     margin-top: -1rem; /* Adjust margin for very small screens */
-  }
-
-  .button {
-    font-size: 0.875rem; /* Even smaller font size for the button */
-    padding: 0.5rem 1rem; /* Even smaller padding for the button */
   }
 
   .top-button {
