@@ -1,48 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Home.css';
-import Swal from 'sweetalert2';
 import { SeparateAway } from './magicUIComponents/seperateAway';
-import MailChimpSubscribe, { EmailFormFields } from "react-mailchimp-subscribe";
-
-interface CustomFormProps {
-  onValidated: (formData: EmailFormFields) => void;
-  status: String | null;
-  message: String | Error | null;
-}
-
-const CustomForm: React.FC<CustomFormProps> = ({ onValidated, status, message }) => {
-  const [email, setEmail] = useState<string>('');
-
-  const handleSubmit = () => {
-    if (email && email.indexOf("@") > -1) {
-      onValidated({ EMAIL: email });
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Invalid Email",
-        text: "Please enter a valid email address.",
-      });
-    }
-  };
-
-  return (
-    <div className="email-container">
-      <input
-        type="email"
-        placeholder="Enter your work email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="email-input"
-      />
-      <button onClick={handleSubmit} className="request-button">
-        Request Access
-      </button>
-    </div>
-  );
-};
 
 const Home: React.FC = () => {
-  const mailChimpUrl = process.env.REACT_APP_URL || '';
+  const [fadeIn, setFadeIn] = useState(false);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    // Trigger fade-in effect after the component mounts
+    setFadeIn(true);
+
+    // Add a scroll listener to handle zoom effect
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScale = 1.2; // Maximum zoom level
+      const zoomFactor = Math.min(maxScale, 1 + scrollPosition / 1000); // Adjust zoom speed
+      setScale(zoomFactor);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="container">
       <button className="top-button">
@@ -67,12 +50,13 @@ const Home: React.FC = () => {
           visible_opacity={1}
         />
       </div>
-      <MailChimpSubscribe
-        url={mailChimpUrl}
-        render={({ subscribe, status, message }) => (
-          <CustomForm onValidated={(formData: EmailFormFields) => subscribe(formData)} status={status} message={message} />
-        )}
-      />
+      {/* New Card Section with fade-in and zoom effect */}
+      <div
+        className={`card ${fadeIn ? 'fade-in' : ''}`}
+        style={{ transform: `scale(${scale})` }} // Dynamic scaling
+      >
+        <img src="/xx.png" alt="desktop" />
+      </div>
     </div>
   );
 };
