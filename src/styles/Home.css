@@ -1,143 +1,60 @@
 .container {
+  position: relative;
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding-top: 5rem;
   overflow: hidden;
   background-color: #fff;
-  background-image: radial-gradient(circle at center, rgba(180, 52, 240, 0) 30%, rgba(255, 255, 255, 1) 100%),
-                    radial-gradient(circle, rgba(57, 9, 70, 0.504) 3%, transparent 10%);
-  background-size: cover, 30px 30px;
-  background-repeat: no-repeat, repeat;
 }
 
-.card {
-  width: 90%;
-  height: 90%;
-  max-height: 900px;
-  max-width: 900px;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background: #f9f9f9;
+/* Wrapper to center everything */
+.content-wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 4rem;
-  opacity: 0; /* Start hidden for fade-in effect */
-  transition: opacity 0.5s ease-out, transform 0.3s ease-out; /* Smooth fade-in and scaling transition */
-  transform: scale(1); /* Default scale for zoom effect */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-130%, -50%);
 }
 
-/* Ensure the image scales with the card */
-.card img {
-  max-width: 100%;
-  border-radius: 0.5rem;
-  transition: transform 0.3s ease-out; /* Smooth scaling transition for the image */
-}
-
-/* Apply animation when the card is visible */
-.fade-in {
-  animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
-}
-
-/* Keyframes for fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px); /* Slight upward movement for the fade-in */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.top-button {
-  font-family: "Roboto", sans-serif;
-  background-color: #f0f0f0da;
-  color: #333333ac;
+/* Headings */
+.title-1, .title-2 {
+  font-size: clamp(5rem, 5vw, 6rem);
   font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgb(245, 245, 245));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.title-2 {
+  margin-top: -10px;
+}
+
+/* Button Container */
+.button-container-main {
+  margin-top: 30px;
+}
+
+.button-txt {
   font-size: 1.1rem;
-  padding: 0.4rem 1rem;
-  border-radius: 1.6rem;
-  border: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  cursor: pointer;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  color: linear-gradient(to right, #e0c3fc, #8ec5fc);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.top-button:hover {
-  color: #530a7e;
-  border-color: #ff00cc;
-  box-shadow: 0 0 10px rgba(255, 0, 204, 0.5), 0 0 20px rgba(255, 0, 204, 0.5);
-}
-
-.heading {
-  font-family: "Roboto", sans-serif;
-  font-size: 4.8rem;
   font-weight: bold;
-  background: -webkit-radial-gradient(rgb(141, 0, 252), rgb(255, 0, 123));
-  background-clip: inherit;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-  align-items: center;
 }
 
-.heading02 { 
-  font-family: "Roboto", sans-serif;
-  margin-top: -3rem;
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 0.2rem;
-  background: -webkit-linear-gradient(rgb(141, 0, 252), rgb(255, 0, 123));
-  background-clip: inherit;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-  align-items: center;
-}
-
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-  .heading {
-    font-size: 3rem; /* Smaller font size for headings on small screens */
-  }
-
-  .heading02 {
-    font-size: 2.5rem; /* Smaller font size for headings on small screens */
-    margin-top: -1.5rem; /* Adjust margin for smaller screens */
-  }
-
-  .top-button {
-    font-size: 1rem; /* Smaller font size for the top button */
-    padding: 0.5rem 1rem; /* Smaller padding for the top button */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .title-1, .title-2 {
+    font-size: 3rem;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .heading {
-    font-size: 2.5rem; /* Even smaller font size for headings on very small screens */
-  }
-
-  .heading02 {
-    font-size: 2rem; /* Even smaller font size for headings on very small screens */
-    margin-top: -1rem; /* Adjust margin for very small screens */
-  }
-
-  .top-button {
-    font-size: 0.875rem; /* Even smaller font size for the top button */
-    padding: 0.5rem 1rem; /* Smaller padding for the top button */
+@media (max-width: 480px) {
+  .title-1, .title-2 {
+    font-size: 2rem;
   }
 }

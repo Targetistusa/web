@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="navbar-flex">
           {/* Logo and Title */}
           <div className="navbar-logo">
-            <img src="lll.png" alt="Logo" className="logo-img" />
+            <img src="icon.png" alt="Logo" className="logo-img" />
             <span className="navbar-title">Targetist</span>
           </div>
 
@@ -87,7 +87,6 @@ const Navbar = () => {
               cancelButtonColor: "#d33",
               cancelButtonText: "Close",
             })}>Resources</a>
-            <Link smooth={true} duration={500} onClick={() => setNav(!nav)} to="pricing" className="nav-item">Pricing</Link>
             <a href="#" className="nav-item" onClick={() => Swal.fire({
               title: "Not found",
               text: "Sorry, this page is still under development. We will be back soon!",
@@ -104,7 +103,7 @@ const Navbar = () => {
           {/* CTA Button */}
           {!isIOS && !isMobile && !isTablet && (
             <div className="navbar-cta">
-              <button className="button-download">Request Access</button>
+              <button className="button-download">Try Now</button>
             </div>
           )}
         </div>

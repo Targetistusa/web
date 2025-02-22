@@ -1,0 +1,26 @@
+.feature-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .feature-card-grid {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .feature-card-content {
+    position: absolute; /* This works only if PixelCard is relative */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+  
+  .feature-card-title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.419);
+  }

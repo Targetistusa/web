@@ -1,0 +1,84 @@
+.onboarding-container {
+    background-color: #ffffff;
+    padding: 4rem 8rem;
+  }
+  
+  .onboarding-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+  
+  .onboarding-bold {
+    color: #000;
+  }
+  
+  .onboarding-content {
+    background-color: #e0ddda36;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .onboarding-text {
+    max-width: 400px;
+  }
+  
+  .onboarding-subheading {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #000;
+  }
+  
+  .onboarding-paragraph {
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  .onboarding-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 350px;
+  }
+  
+  .onboarding-task {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .onboarding-task.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+  
+  .completed-text {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  .task-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .avatar {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
