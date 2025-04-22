@@ -18,7 +18,7 @@ const Cal: React.FC = () => {
             Targetist's smart scheduling system manages your calendar automatically and optimizes your time.
           </p>
           <div className="button-container">
-            <button className="app-store-button"> App Store </button>
+            <button className="app-store-button" onClick={() => window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')}> App Store </button>
           </div>
         </div>
 

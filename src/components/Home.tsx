@@ -25,7 +25,7 @@ const Home: React.FC = () => {
           <h1 className="title-1">Achieving Targets Has Never</h1>
           <h1 className="title-2">Been This Easy</h1>
 
-          <div className="button-container-main">
+          <div className="button-container-main" onClick={() => window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')}>
             <StarBorder as="button" className="button-1" color="purple" speed="2s">
               <ShinyText className="button-txt" text="try it now!" disabled={false} speed={1} />
             </StarBorder>

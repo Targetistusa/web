@@ -9,9 +9,9 @@ const OnboardingSection: React.FC = () => {
       <div className="onboarding-content">
         {/* Left Text Section */}
         <div className="onboarding-text">
-          <h2 className="onboarding-subheading">Collaborate together for a seamless transition.</h2>
+          <h2 className="onboarding-subheading">Collaborate together for a seamless schedule.</h2>
           <p className="onboarding-paragraph">
-            Use powerful tasks and scheduled messages and forms to create a great onboarding experience.
+            Stop the endless messaging threads—plan group events and tasks in minutes, not hours 💬.
           </p>
         </div>
 

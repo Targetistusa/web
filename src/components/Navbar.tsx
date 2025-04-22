@@ -104,7 +104,8 @@ const Navbar = () => {
           {/* CTA Button */}
           {!isIOS && !isMobile && !isTablet && (
             <div className="navbar-cta">
-              <button className="button-download">Try Now</button>
+              <button className="button-download"
+              onClick={() => window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')}>Try Now</button>
             </div>
           )}
         </div>

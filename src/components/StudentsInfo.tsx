@@ -53,7 +53,7 @@ const StudentsInfo: React.FC = () => {
               muted 
               playsInline
             >
-              <source src={require("../assets/complete.mp4")} type="video/mp4" />
+              <source src={require("../assets/Complete2.mp4")} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
