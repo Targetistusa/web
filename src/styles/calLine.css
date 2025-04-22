@@ -1,0 +1,157 @@
+/* Main Container */
+.new-section-container {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  width: 100%;
+}
+
+.heading1 {
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  margin: 0;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  background-color: #f5f5f5;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Left Side (Text Section) */
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.app-store-button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #000;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.app-store-button:hover {
+  background-color: #222;
+}
+
+/* Right Side (Images) */
+.card-images {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+.phone-image1,
+.phone-image2 {
+  position: absolute;
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.phone-image1 {
+  transform: translate(20%, -50%) rotate(-4deg);
+  z-index: 2;
+}
+
+.phone-image2 {
+  transform: translate(-20%, 50%) rotate(2deg);
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .card-content {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .card-title,
+  .description {
+    text-align: center;
+  }
+
+  .card-images {
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  .phone-image2{
+    display: none;
+  }
+  .phone-image1 {
+    position: static;
+    transform: none;
+    max-width: 90%;
+    transform: translate(0%, 20%);
+  }
+
+  .button-container {
+    justify-content: center;
+  }
+}

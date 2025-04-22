@@ -1,90 +1,125 @@
-.dock-footer {
-    background-color: #ffffff;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
+/* Footer Container */
+.footer-container {
+    background-color: #6b00ad;
+    padding: 4rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Gradient Card */
+.footer-card {
+    background: #6b00ad;
+    width: 100%;
+    border-radius: 2rem;
+    padding: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer Bottom */
+.footer-bottom {
     width: 100%;
     display: flex;
-    justify-content: center;
-    margin-bottom: 0;
-    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+    color: #aaa;
+    font-size: 0.9rem;
+    max-width: 1100px;
+    padding: 0 1rem;
+}
+.custom-scroll-text{
+    color: rgba(207, 155, 255, 0.848);
+}
+/* Social Links */
+/* .social-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
-.dock-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #ffffffde;
-    border-radius: 20px;
-    padding: 10px 20px;
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    max-width: 80%;
-    width: 50%;
+.social-links a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease;
 }
 
-.dock-item {
+.social-links a:hover img {
+    transform: scale(1.2);
+} */
+
+.social-links {
     display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
     justify-content: center;
+  }
+  
+  .social-icon {
+    background-color: transparent;
+    color: rgba(207, 155, 255, 0.921);;
+    width: 42px;
+    height: 42px;
+    display: flex;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: #eee;
+    justify-content: center;
     border-radius: 50%;
-    margin: 0 5px; /* Adjusted margin */
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+  
+  .social-icon:hover {
+    background-color: #f3f3f3;
+    color: #4c0072;
+  }
+  
+
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
-.dock-item img {
-    width: 24px;
-    height: 24px;
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-@media (max-width: 1200px) {
-    .dock-container {
-        width: 60%;
-    }
-
-    .dock-item {
-        width: 45px;
-        height: 45px;
-    }
-
-    .dock-item img {
-        width: 22px;
-        height: 22px;
-    }
+.footer-links a:hover {
+    color: rgba(255, 255, 255, 0.707);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    .dock-container {
-        width: 70%;
+    .footer-card {
+        width: 95%;
+        padding: 2rem;
     }
 
-    .dock-item {
-        width: 40px;
-        height: 40px;
+    .footer-title {
+        font-size: 2rem;
     }
 
-    .dock-item img {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .dock-container {
-        flex-direction: row; /* Stack items vertically on small screens */
-        padding: 5px 10px;
+    .footer-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
     }
 
-    .dock-item {
-        width: 35px;
-        height: 35px;
-        margin: 5px 0; /* Adjust margin for vertical stacking */
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
     }
 
-    .dock-item img {
-        width: 18px;
-        height: 18px;
+    .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }

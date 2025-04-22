@@ -1,0 +1,144 @@
+.onboarding-container {
+  background-color: #ffffff;
+  padding: 4rem 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.onboarding-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #000;
+  text-align: center;
+}
+
+.onboarding-content {
+  background-color: #e0ddda36;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Left Text Block */
+.onboarding-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 450px;
+}
+
+.onboarding-subheading {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.onboarding-paragraph {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Right Task Card Block */
+.onboarding-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.onboarding-task {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.onboarding-task.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.completed-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-details p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.avatar {
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+  .onboarding-container {
+    padding: 3rem 2rem;
+  }
+
+  .onboarding-heading {
+    font-size: 2.5rem;
+  }
+
+  .onboarding-subheading {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .onboarding-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .onboarding-text,
+  .onboarding-card {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .onboarding-task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .avatar {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .onboarding-heading {
+    font-size: 2rem;
+  }
+
+  .onboarding-subheading {
+    font-size: 1.5rem;
+  }
+
+  .onboarding-paragraph {
+    font-size: 0.95rem;
+  }
+}

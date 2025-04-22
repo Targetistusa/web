@@ -34,19 +34,20 @@ const Navbar = () => {
         <div className="navbar-flex">
           {/* Logo and Title */}
           <div className="navbar-logo">
-            <img src="lll.png" alt="Logo" className="logo-img" />
+            <img src="icon.png" alt="Logo" className="logo-img" />
             <span className="navbar-title">Targetist</span>
           </div>
 
           {/* Hamburger Menu */}
-          <div onClick={toggleNav} className="hamburger-menu-style">
+          {/* <button onClick={toggleNav} className="hamburger-menu-style" aria-label="Toggle menu">
             {!nav ? <FaBars size={30} /> : <FaTimes size={30} />}
-          </div>
+          </button> */}
+
 
           {nav && (
             <ul className="mobile-menu">
               <div onClick={toggleNav} style={{ position: "absolute", top: 10, left: 10 }}>
-                <FaTimes size={30} style={{ color: "#fff" }} />
+                <FaTimes size={30} style={{ color: "#770fa7" }} />
               </div>
               <Link smooth={true} duration={500} onClick={() => setNav(!nav)} to="features" className="nav-item">Features</Link>
               <a href="#" className="nav-item" onClick={() => Swal.fire({
@@ -87,7 +88,6 @@ const Navbar = () => {
               cancelButtonColor: "#d33",
               cancelButtonText: "Close",
             })}>Resources</a>
-            <Link smooth={true} duration={500} onClick={() => setNav(!nav)} to="pricing" className="nav-item">Pricing</Link>
             <a href="#" className="nav-item" onClick={() => Swal.fire({
               title: "Not found",
               text: "Sorry, this page is still under development. We will be back soon!",
@@ -104,7 +104,8 @@ const Navbar = () => {
           {/* CTA Button */}
           {!isIOS && !isMobile && !isTablet && (
             <div className="navbar-cta">
-              <button className="button-download">Request Access</button>
+              <button className="button-download"
+              onClick={() => window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')}>Try Now</button>
             </div>
           )}
         </div>

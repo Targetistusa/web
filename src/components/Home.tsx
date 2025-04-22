@@ -1,78 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/Home.css';
-import Swal from 'sweetalert2';
-import { SeparateAway } from './magicUIComponents/seperateAway';
-import MailChimpSubscribe, { EmailFormFields } from "react-mailchimp-subscribe";
-
-interface CustomFormProps {
-  onValidated: (formData: EmailFormFields) => void;
-  status: String | null;
-  message: String | Error | null;
-}
-
-const CustomForm: React.FC<CustomFormProps> = ({ onValidated, status, message }) => {
-  const [email, setEmail] = useState<string>('');
-
-  const handleSubmit = () => {
-    if (email && email.indexOf("@") > -1) {
-      onValidated({ EMAIL: email });
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Invalid Email",
-        text: "Please enter a valid email address.",
-      });
-    }
-  };
-
-  return (
-    <div className="email-container">
-      <input
-        type="email"
-        placeholder="Enter your work email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="email-input"
-      />
-      <button onClick={handleSubmit} className="request-button">
-        Request Access
-      </button>
-    </div>
-  );
-};
+import Squares from '../Squares/Squares';
+import FadeContent from '../FadeContent/FadeContent';
+import ShinyText from '../ShinyText/ShinyText';
+import StarBorder from '../StarBorder/StarBorder';
 
 const Home: React.FC = () => {
-  const mailChimpUrl = process.env.REACT_APP_URL || '';
   return (
     <div className="container">
-      <button className="top-button">
-        <span role="img" aria-label="celebration">🎉</span>
-        free during beta
-      </button>
-      <div className='flex justify-center items-center text-center gap-3'>
-        <SeparateAway
-          upper_text='Setting Targets Has Never'
-          lower_text=''
-          className='heading'
-          duration={2}
-          hidden_opacity={0}
-          visible_opacity={1}
-        />
-        <SeparateAway
-          upper_text=''
-          lower_text='Been This Easy'
-          className='heading02'
-          duration={2}
-          hidden_opacity={0}
-          visible_opacity={1}
+      {/* Squares as animated background */}
+      <div className="squares-background">
+        <Squares
+          speed={0.5}
+          squareSize={60}
+          direction="down"
+          borderColor="rgba(0, 0, 0, 0.11)"
+          hoverFillColor="rgba(167, 87, 215, 0.4)"
         />
       </div>
-      <MailChimpSubscribe
-        url={mailChimpUrl}
-        render={({ subscribe, status, message }) => (
-          <CustomForm onValidated={(formData: EmailFormFields) => subscribe(formData)} status={status} message={message} />
-        )}
-      />
+
+      {/* Fade-in text and CTA on top */}
+      <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+        <div className="content-wrapper">
+          <h1 className="title-1">Achieving Targets Has Never</h1>
+          <h1 className="title-2">Been This Easy</h1>
+
+          <div className="button-container-main" onClick={() => window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')}>
+            <StarBorder as="button" className="button-1" color="purple" speed="2s">
+              <ShinyText className="button-txt" text="try it now!" disabled={false} speed={1} />
+            </StarBorder>
+          </div>
+        </div>
+      </FadeContent>
     </div>
   );
 };
