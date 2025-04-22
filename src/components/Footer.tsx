@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Footer.css';
 import ScrollVelocity from '../ScrollVelocity/ScrollVelocity';
+import { FaInstagram, FaLinkedinIn, FaYoutube, FaXTwitter } from 'react-icons/fa6';
 
 const DockFooter: React.FC = () => {
     return (
@@ -18,23 +19,24 @@ const DockFooter: React.FC = () => {
             <div className="footer-bottom">
                 {/* Social Links */}
                 <div className="social-links">
-                    <a href="https://www.instagram.com/targetistusa/" target="_blank" rel="noopener noreferrer">
-                        <img src="/insta.png" alt="Instagram" />
+                    <a href="https://www.instagram.com/targetistusa/" target="_blank" rel="noopener noreferrer" className="social-icon">
+                        <FaInstagram />
                     </a>
-                    <a href="https://www.linkedin.com/company/targetist/" target="_blank" rel="noopener noreferrer">
-                        <img src="/ln.png" alt="LinkedIn" />
+                    <a href="https://www.linkedin.com/company/targetist/" target="_blank" rel="noopener noreferrer" className="social-icon">
+                        <FaLinkedinIn />
                     </a>
-                    <a href="https://www.youtube.com/channel/UC07vnXmM-V7FUWF3sYFgwwA" target="_blank" rel="noopener noreferrer">
-                        <img src="/yt.png" alt="YouTube" />
+                    <a href="https://www.youtube.com/channel/UC07vnXmM-V7FUWF3sYFgwwA" target="_blank" rel="noopener noreferrer" className="social-icon">
+                        <FaYoutube />
                     </a>
-                    <a href="https://x.com/targetistusa" target="_blank" rel="noopener noreferrer">
-                        <img src="/xx.png" alt="X" />
+                    <a href="https://x.com/targetistusa" target="_blank" rel="noopener noreferrer" className="social-icon">
+                        <FaXTwitter />
                     </a>
                 </div>
 
+
                 {/* Footer Links */}
                 <div className="footer-links">
-                    <a href="#">Privacy</a>
+                    <a href="https://targetist.io/privacy-policy.html">Privacy</a>
                     <a href="#">Terms</a>
                 </div>
             </div>

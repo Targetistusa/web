@@ -33,23 +33,33 @@ const FadeContent: React.FC<FadeContentProps> = ({
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
-
+  
+    const reveal = () => {
+      setTimeout(() => {
+        setInView(true);
+      }, delay);
+    };
+  
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          reveal();
           observer.unobserve(element);
-          setTimeout(() => {
-            setInView(true);
-          }, delay);
         }
       },
-      { threshold },
+      { threshold }
     );
-
+  
     observer.observe(element);
-
+  
+    // Check if already visible on load (in case it's above the fold)
+    if (element.getBoundingClientRect().top < window.innerHeight) {
+      reveal();
+    }
+  
     return () => observer.disconnect();
   }, [threshold, delay]);
+  
 
   return (
     <div

@@ -39,14 +39,15 @@ const Navbar = () => {
           </div>
 
           {/* Hamburger Menu */}
-          <div onClick={toggleNav} className="hamburger-menu-style">
+          {/* <button onClick={toggleNav} className="hamburger-menu-style" aria-label="Toggle menu">
             {!nav ? <FaBars size={30} /> : <FaTimes size={30} />}
-          </div>
+          </button> */}
+
 
           {nav && (
             <ul className="mobile-menu">
               <div onClick={toggleNav} style={{ position: "absolute", top: 10, left: 10 }}>
-                <FaTimes size={30} style={{ color: "#fff" }} />
+                <FaTimes size={30} style={{ color: "#770fa7" }} />
               </div>
               <Link smooth={true} duration={500} onClick={() => setNav(!nav)} to="features" className="nav-item">Features</Link>
               <a href="#" className="nav-item" onClick={() => Swal.fire({
