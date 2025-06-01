@@ -5,11 +5,16 @@
     "strict": true,
     "baseUrl": ".", 
     "paths": {
-      "@/*": ["./*"] 
+      "@/*": ["./*"],
+      "@shadcn/*": ["src/webApp/shadcn_components/*"],
+      "@src/*": ["src"]
     },
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    "isolatedModules": true,
     "esModuleInterop": true
   },
   "include": ["src"],

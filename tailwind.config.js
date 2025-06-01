@@ -1,12 +1,12 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import {fontFamily} from "tailwindcss/defaultTheme"
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"], // Enable dark mode with class strategy
   content: [
     "./pages/**/*.{html,js,ts,tsx}",
-    "./components/**/*.{html,js,ts,tsx}",
     "./app/**/*.{ts,tsx}",
+    "./src/webApp/**/*.{html,js,ts,tsx}",
   ],
   theme: {
     container: {
