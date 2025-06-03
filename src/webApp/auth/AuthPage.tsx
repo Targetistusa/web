@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import {
   CardContent,
   CardHeader,
@@ -6,6 +6,8 @@ import {
   CardDescription,
   CardFooter,
 } from "../shadcn_components/ui/card";
+import axios, { AxiosResponse } from "axios";
+
 import { Button } from "../shadcn_components/ui/button";
 import { Input } from "../shadcn_components/ui/input";
 import { Separator } from "../shadcn_components/ui/separator";
@@ -14,16 +16,29 @@ import "./AuthPage.css"
 import { useNavigate } from "react-router-dom";
 import { useReducer } from "react";
 import { authReducer, handleSignInAmplify, handleSignUpAmplify, initialAuthState } from "../services/auth/auth";
+import { useGoogleLogin } from "@react-oauth/google";
+import { useUserContext } from "../Context/UserContext";
 
 const LoginPage: FC = () => {
   const [state, dispatch] = useReducer(authReducer, initialAuthState);
-
+  const {user, setUser} = useUserContext();
   const { email, password, confirmPassword, isSignUp, isLoading } = state;
   const navigate = useNavigate()
-  
+  const [googleAccessToken, setGoogleAccessToken] = React.useState<string | null>(null);
+  const handleGoogleSignIn = useGoogleLogin({
+    onSuccess(codeResponse) {
+      console.log("Code response:", codeResponse)
+      setGoogleAccessToken(codeResponse.access_token);
+      navigate('/')
+    },
+    onError(errorResponse) {
+      console.log("Error:", errorResponse)
+      navigate('/signin')
+    },
+  })
+
 
   function handleSignUpToggle(e: React.FormEvent) {
-    
     e.preventDefault();
     dispatch({ type: "TOGGLE_SIGNUP" });
   }
@@ -49,6 +64,35 @@ const LoginPage: FC = () => {
     dispatch({type: 'RESET_DEFAULT'})
   }
 
+  useEffect(
+    () => {
+        if (googleAccessToken) {
+          axios
+            .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${googleAccessToken}`, {
+                headers: {
+                    Authorization: `Bearer ${googleAccessToken}`,
+                    Accept: 'application/json'
+                }
+            })
+            .then((user: AxiosResponse) => {
+                // setProfile(res.data);
+                console.log("Google User Info:", user.data);
+                setUser({
+                  userId: user.data.id,
+                  preferred_username: user.data.name,
+                  email: user.data.email,
+                  signedIn_withAmplify: false,
+                  signedIn_withGoogle: true,
+                  signedIn_withApple: false,
+                  profileImage: ""
+                });
+            })
+            .catch((err) => console.log(err));
+        }
+    },
+    [ googleAccessToken, setUser ]
+    );
+
   return (
     <main className="login-page">
       <div className="login-card">
@@ -68,9 +112,9 @@ const LoginPage: FC = () => {
 
           <CardContent className="form-content">
             <Button className="w-full flex items-center gap-2 rounded-xl text-lg bg-slate-100 py-2">
-              <img src={require('../../assets/apple2.png')} alt="Google Logo" className="google-oauth-logo"/> Continue with Apple &nbsp; {/* This space is to bring consistent alignment*/}
+              <img src={require('../../assets/apple2.png')} alt="Apple Logo" className="google-oauth-logo"/> Continue with Apple &nbsp; {/* This space is to bring consistent alignment*/}
             </Button>
-            <Button className="w-full flex items-center gap-2 rounded-xl text-lg bg-slate-100 py-2">
+            <Button className="w-full flex items-center gap-2 rounded-xl text-lg bg-slate-100 py-2" onClick={()=> handleGoogleSignIn()}>
               <img src={require('../../assets/Google.png')} alt="Google Logo" className="google-oauth-logo"/> Continue with Google
             </Button>
 

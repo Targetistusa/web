@@ -6,12 +6,13 @@ import { isMobile, isTablet, isIOS } from 'react-device-detect';
 import Swal from 'sweetalert2';
 import { Link } from "react-scroll";
 import { useNavigate } from 'react-router-dom';
-
+import { useUserContext } from '../webApp/Context/UserContext';
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const toggleNav = () => setNav(!nav);
+  const {user, setUser} = useUserContext();
   const openPrivacyPolicy = () => {
     window.open(`/privacy-policy.html`, "_blank");
   };
@@ -106,7 +107,7 @@ const Navbar = () => {
           {/* CTA Button */}
           {!isIOS && !isMobile && !isTablet && (
             <div className="navbar-cta">
-          <button onClick={()=>navigate('/signin')} className="nav-item-login">Login</button>
+          <button onClick={()=>navigate(user? '/dashboard':'/signin')} className="nav-item-login">{user? "Go to Targetist" : "Login"}</button>
               <button className="button-download"
               onClick={() => window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')}>Try Now</button>
             </div>
@@ -121,3 +122,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
