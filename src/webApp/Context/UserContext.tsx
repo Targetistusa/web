@@ -1,7 +1,7 @@
 // src/context/UserContext.tsx
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-type User = {
+export type User = {
   userId: string;
   preferred_username: string;
   email: string;
@@ -17,7 +17,7 @@ type UserContextType = {
 };
 
 // Default user state
-const defaultUser: User = {
+export const defaultUser: User = {
   userId: "",
   preferred_username: "",
   email: "",
