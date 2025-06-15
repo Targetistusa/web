@@ -6,8 +6,7 @@
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  padding: 1.3rem;
-  /* bg-gray-100 */
+  padding: 1.3rem;          /* bg-gray-100 */
 }
 
 .login-card {
@@ -15,21 +14,19 @@
   flex-direction: row;
   width: 100%;
   max-width: 80rem;
-  min-height: 600px; /* Add a minimum height */
+  min-height: 600px;        /* minimum height */
   border-radius: 2.75rem;
   box-shadow: 0 0 50px 10px rgba(0, 0, 0, .25);
   overflow: hidden;
 }
 
-
 .login-form {
-  flex: 0 0 50%; /* Fixed width of 50% */
+  flex: 0 0 50%;            /* fixed 50 % width */
   padding: 2rem;
   background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
 }
 
 @media screen and (min-width: 48rem) {
@@ -43,15 +40,12 @@
   margin-bottom: 1.5rem;
 }
 
-.form-header>*+* {
-  margin-top: .5rem;
+.form-header > * + * {
+  margin-top: .5rem;        /* space-y-2 */
 }
 
-/* space-y-2 */
-
 .form-title {
-  font-size: 1.5rem;
-  /* text-2xl */
+  font-size: 1.5rem;        /* text-2xl */
   line-height: 2rem;
   text-align: center;
   font-weight: 600;
@@ -70,7 +64,6 @@
 
 .form-description {
   font-size: 0.125rem;
-
   font-weight: 700;
   text-align: center;
 }
@@ -82,7 +75,6 @@
   display: inline-block;
   margin-right: 0.4em;
 }
-
 
 /* ---------- Content ---------- */
 .form-content {
@@ -97,95 +89,73 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1.5rem;
-  /* gap-2 */
+  border-radius: 1.5rem;    /* gap-2 */
 }
 
 /* ---------- Separator ---------- */
 .separator-section {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
-  /* my-4 */
+  margin: 1rem 0;           /* my-4 */
 }
 
-
-
 .separator-label {
-  margin: 0 1rem;
-  /* mx-4 */
-  font-size: .75rem;
-  /* text-xs */
-  letter-spacing: .1em;
-  /* tracking-widest */
+  margin: 0 1rem;           /* mx-4 */
+  font-size: .75rem;        /* text-xs */
+  letter-spacing: .1em;     /* tracking-widest */
   text-transform: uppercase;
-  color: #6b7280;
-  /* muted-foreground */
+  color: #6b7280;           /* muted-foreground */
 }
 
 /* ---------- Form & rules ---------- */
 .input-form {
   display: flex;
   flex-direction: column;
-  gap: .75rem;
-  /* space-y-3 */
+  gap: .75rem;              /* space-y-3 */
 }
 
 .password-rules {
-  font-size: .75rem;
-  /* text-xs */
-  padding-left: 1rem;
-  /* pl-4 */
+  font-size: .75rem;        /* text-xs */
+  padding-left: 1rem;       /* pl-4 */
   list-style: disc;
   margin: .5rem 0;
 }
 
-.password-rules li+li {
-  margin-top: .25rem;
+.password-rules li + li {
+  margin-top: .25rem;       /* space-y-1 */
 }
 
-/* space-y-1 */
-
 .rule-valid {
-  color: #16a34a;
-  /* green-600 */
+  color: #16a34a;           /* green-600 */
   display: flex;
   align-items: center;
 }
 
 .rule-invalid {
-  color: #6b7280;
-  /* muted-foreground */
+  color: #6b7280;           /* muted-foreground */
   display: flex;
   align-items: center;
 }
 
 .checkmark {
-  margin-right: .5rem;
+  margin-right: .5rem;      /* mr-2 */
 }
-
-/* mr-2 */
 
 /* ---------- Submit & footer ---------- */
 .submit-button {
   width: 100%;
-  margin-top: 1rem;
-  /* mt-4 */
-  padding: 1.25rem 0;
-  /* py-6 */
-  font-size: 1rem;
-  /* text-base */
+  margin-top: 1rem;         /* mt-4 */
+  padding: 1.25rem 0;       /* py-6 */
+  font-size: 1rem;          /* text-base */
   font-weight: 600;
-  border-radius: 9999px;
-  background-color: #000000;
+  border-radius: 9999px;    /* rounded-full */
+  background-color: #000;
   color: #e5e7eb;
-  /* rounded-full */
 }
-
 
 /* ---------- Right-hand image ---------- */
 .login-image-container {
-  flex: 0 0 50%; /* Fixed width of 50% */
+  flex: 0 0 50%;            /* fixed 50 % width */
   background: #fff;
   display: flex;
   align-items: center;
@@ -208,7 +178,7 @@
   border-radius: 2rem;
 }
 
-/* Mobile styles */
+/* ---------- Mobile styles ---------- */
 @media screen and (max-width: 47.99rem) {
   .login-card {
     flex-direction: column;
@@ -228,7 +198,7 @@
 /* ---------- Utility ---------- */
 .visually-hidden {
   position: absolute;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
   width: 1px;

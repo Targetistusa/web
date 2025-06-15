@@ -2,15 +2,19 @@ import { googleLogout } from '@react-oauth/google';
 import { signIn, signOut, signUp } from 'aws-amplify/auth';
 import { NavigateFunction } from 'react-router-dom';
 import { defaultUser } from '../../Context/UserContext';
+import { confirmSignUp } from 'aws-amplify/auth';
+
 export interface AuthState {
   email: string;
   password: string;
   confirmPassword: string;
+  preferredUsername?: string; // Optional, used for sign up
   isSignUp: boolean;
   isLoading: boolean;
   emailError?: string;
   passwordError?: string;
   confirmPasswordError?: string;
+  preferredUsernameError?: string;
 }
 
 type AuthError = {
@@ -28,13 +32,20 @@ export type AuthAction =
     | { type: 'TOGGLE_SIGNUP'}
     | { type: 'RESET_DEFAULT'}
     | { type: 'RESET_ERRORS' }
+    | { type: 'SET_PREFERRED_USERNAME'; payload: string }
+    | { type: 'SET_PREFERRED_USERNAME_ERROR'; payload: string };
 
 export const initialAuthState: AuthState = {
     email: '',
     password: '',
     confirmPassword: '',
+    preferredUsername: '',
     isSignUp: true,
-    isLoading: false
+    isLoading: false,
+    emailError: '',
+    passwordError: '',
+    confirmPasswordError: '',
+    preferredUsernameError: ''
 };
 
 export function authReducer(state: AuthState, action: AuthAction): AuthState {
@@ -63,8 +74,11 @@ export function authReducer(state: AuthState, action: AuthAction): AuthState {
         case "SET_CONFIRM_PASSWORD_ERROR":
             return { ...state, confirmPasswordError: action.payload };
         case "RESET_ERRORS":
-            return { ...state, emailError: "", passwordError: "", confirmPasswordError: "" };
-
+            return { ...state, emailError: "", passwordError: "", confirmPasswordError: "", preferredUsernameError: "" };
+        case "SET_PREFERRED_USERNAME_ERROR":
+            return { ...state, preferredUsernameError: action.payload };
+        case "SET_PREFERRED_USERNAME":
+            return { ...state, preferredUsername: action.payload };
         
         default:
             return state;
@@ -117,7 +131,7 @@ export async function handleSignUpAmplify(
           username: email,
           password
       });
-      navigate('/')
+      return true;
   } catch (err: any) {
       console.log("Error sign up:", err);
       if (err?.name?.includes("UsernameExistsException")) {
@@ -132,7 +146,8 @@ export async function handleSignUpAmplify(
             description: err?.message || 'An unexpected error occurred while signing up. Please try again.'
         });
       }
-  }
+      return false;
+    }
 }
 
 
@@ -154,4 +169,25 @@ export function handleSignOutGoogle(navigate: NavigateFunction, setUser: (user: 
     } catch (error) {
         console.error('Error signing out:', error);
     }
+}
+
+export async function confirmSignUpAmplify(
+  email: string,
+  code: string,
+  navigate: NavigateFunction,
+  setError: (msg: AuthError) => void
+) {
+  try {
+    await confirmSignUp({ username: email, confirmationCode: code });
+    navigate("/");                       // user confirmed – go home
+  } catch (err: any) {
+    console.error("confirm error:", err);
+    if (err.name?.includes("CodeMismatchException")) {
+      setError({ title: "Invalid code", description: "Please check the 6-digit code and try again." });
+    } else if (err.name?.includes("ExpiredCodeException")) {
+      setError({ title: "Code expired", description: "The code has expired. Resend and try again." });
+    } else {
+      setError({ title: "Confirmation error", description: err.message ?? "Unexpected error." });
+    }
+  }
 }
