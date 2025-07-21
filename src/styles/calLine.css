@@ -1,5 +1,9 @@
 /* Main Container */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+
 .new-section-container {
+  font-family: "Newsreader", serif;
   background-color: #ffffff;
   padding: 4rem 2rem;
   display: flex;
@@ -14,12 +18,13 @@
   width: 100%;
 }
 
-.heading1 {
-  font-size: 3.8rem;
-  font-weight: bold;
-  color: #222;
+.header-text {
+  font-family: "Newsreader", serif !important;
+  font-size: 5rem !important;
+  color: #000000;
   text-align: center;
-  margin: 0;
+  font-weight: lighter;
+  white-space: nowrap;
 }
 
 /* Card Container */
@@ -54,6 +59,7 @@
   color: #111;
   margin: 0;
 }
+
 
 .description {
   font-size: 1.2rem;
