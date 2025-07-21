@@ -38,8 +38,17 @@
 .title-1 {
   font-family: "Newsreader", serif !important;
   font-size: 5rem !important;
+  color: #ffffffb8;
+  text-align: center;
+  font-weight: lighter;
+  white-space: nowrap;
+}
 
-  color: #ffffffd0;
+.title-2 {
+  font-family: "Newsreader", serif !important;
+  font-size: 5rem !important;
+  font-style: italic;
+  color: #ffffffb8;
   text-align: center;
   font-weight: lighter;
   white-space: nowrap;
@@ -49,13 +58,42 @@
 
 /* === CTA Button === */
 .button-container-main {
-  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.button-txt {
-  font-size: 1.1rem;
-  font-weight: bold;
+.install-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition:
+    box-shadow 0.5s ease,
+    transform 0.3s ease,
+    background 0.4s ease;
 }
+
+.install-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+}
+
+.chrome-icon {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+
 
 /* === Responsive Fixes === */
 @media (max-width: 1024px) {
