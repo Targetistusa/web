@@ -12,7 +12,7 @@ const Cal: React.FC = () => {
       {/* Section Header */}
       <div style={{position: 'relative'}} ref={headContainerRef}>
         <VariableProximity
-          label={'The OS for your Human Time'}
+          label={'Infrastructure for Time Orchestration'}
           className={'header-text'}
           fromFontVariationSettings="'wght' 200, 'opsz' 30"
           toFontVariationSettings="'wght' 700, 'opsz' 40"
@@ -28,10 +28,10 @@ const Cal: React.FC = () => {
         <div className="card-content">
           <h3 className="card-title">Effortless and on the go.</h3>
           <p className="description">
-            Targetist's smart scheduling system manages your calendar automatically and optimizes your time.
+            Targetist replaces chaos with intelligent coordination — sequencing tasks, tools, and agents in real-time. Whether it's human work or automated workflows, everything runs smoothly and lands in the right time.
           </p>
           <div className="button-container">
-            <button className="app-store-button" onClick={() => window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')}> Note from the founder </button>
+            <button className="app-store-button" onClick={() => window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')}> Meet the Vision </button>
           </div>
         </div>
 
