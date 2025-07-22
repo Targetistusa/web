@@ -1,44 +1,46 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/OnboardingSection.css';
-
+import VariableProximity from '../VariableProximity/VariableProximity';
+import Marquee from "react-fast-marquee";
 const OnboardingSection: React.FC = () => {
+  const containerRef = useRef(null);
+  const imageArray = [
+    require('../assets/google.png'),
+    require('../assets/microsoft.png'),
+    require('../assets/aws.png'),
+    require('../assets/gitlab.png'),
+    require('../assets/atlassian.png'),
+    require('../assets/salesforce.png'),
+    require('../assets/slack.png'),
+    require('../assets/airtable.png'),
+  ]
   return (
-    <div className="onboarding-container">
-      <h1 className="onboarding-heading">Plan Never. Celebrate Together 🎉</h1>
-
-      <div className="onboarding-content">
-        {/* Left Text Section */}
-        <div className="onboarding-text">
-          <h2 className="onboarding-subheading">Collaborate together for a seamless schedule.</h2>
-          <p className="onboarding-paragraph">
-            Stop the endless messaging threads—plan group events and tasks in minutes, not hours 💬.
-          </p>
-        </div>
-
-        {/* Right Card Section */}
-        <div className="onboarding-card">
-          <div className="onboarding-task completed">
-            <input type="checkbox" checked readOnly />
-            <span className="task-text completed-text">Running @ 06:30</span>
-            <div className="avatar">👟</div>
+    <div className="onboarding-container" ref={containerRef}>
+      <VariableProximity
+        label={'Composable Integration Layer'}
+        className={'onboarding-heading'}
+        fromFontVariationSettings="'wght' 200, 'opsz' 30"
+        toFontVariationSettings="'wght' 700, 'opsz' 40"
+        containerRef={containerRef}
+        radius={100}
+        falloff="exponential"
+      />
+      <h4 className="onboarding-subheading">Connect your company's stack with custom rules and logic</h4>
+      <Marquee autoFill={true} gradient={true}>
+        {imageArray.map((val: string, idx: number) => (
+          <div key={idx} style={{
+            marginLeft: "0.7rem",
+            borderRadius:"2rem",
+            border: "1px solid rgba(164, 167, 170, 0.433)",
+          }}>
+            <img src={val} style={{
+              width:200,
+              height:200
+            }} alt='Integration' />
           </div>
+        ))}
+      </Marquee>
 
-          <div className="onboarding-task">
-            <input type="checkbox" />
-            <div className="task-details">
-              <strong>PI Meeting @ 08:30 v2</strong>
-              <p>Schedule a Zoom call with Sagar</p>
-            </div>
-            <div className="avatar">🧑</div>
-          </div>
-
-          <div className="onboarding-task">
-            <input type="checkbox" />
-            <strong className="task-text">Make Dinner</strong>
-            <div className="avatar">🌮</div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
