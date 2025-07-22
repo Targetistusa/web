@@ -12,8 +12,8 @@ const StudentsInfo: React.FC = () => {
           <VariableProximity
             label={'Manage tasks and schedules with ease.'}
             className={'variable-proximity-d'}
-            fromFontVariationSettings="'wght' 700, 'opsz' 9"
-            toFontVariationSettings="'wght' 1000, 'opsz' 40"
+            fromFontVariationSettings="'wght' 200, 'opsz' 30"
+            toFontVariationSettings="'wght' 700, 'opsz' 40"
             containerRef={containerRef}
             radius={100}
             falloff="gaussian"

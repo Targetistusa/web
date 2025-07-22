@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
 .students-info-section {
   background-color: #ffffff;
   padding: 4rem 2rem;
@@ -74,7 +76,8 @@
 /* === Header Animation Styling === */
 .variable-proximity-d {
   margin-bottom: 2rem;
-  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-family: "Newsreader", serif !important;
+  font-size: 5rem !important;
   text-align: center;
 }
 

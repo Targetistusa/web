@@ -33,7 +33,7 @@ const Home: React.FC = () => {
               toFontVariationSettings="'wght' 700, 'opsz' 40"
               containerRef={containerRef}
               radius={100}
-              falloff="gaussian"
+              falloff="exponential"
             />
             <VariableProximity
               label={' thought'}
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
               toFontVariationSettings="'wght' 700, 'opsz' 40"
               containerRef={containerRef}
               radius={100}
-              falloff="gaussian"
+              falloff="exponential"
             />
           </div>
 
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
                 window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')
               }
             >
-              {/* <img src="longo.png" alt="Apple" className="ios-icon" /> */}
+              <img src="longo.png" alt="Apple" className="ios-icon" />
               Available on iOS
             </button>
           </div>
