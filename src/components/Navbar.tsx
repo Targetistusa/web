@@ -34,7 +34,7 @@ const Navbar = () => {
               <button
                 className="button-download"
                 onClick={() =>
-                  window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')
+                  window.open('https://docs.targetist.io/', '_blank')
                 }
               >
                 Docs

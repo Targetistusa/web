@@ -10,7 +10,7 @@ const StudentsInfo: React.FC = () => {
       <div className="students-info-content">
         <div ref={containerRef} style={{ position: 'relative', marginBottom: "3rem" }}>
           <VariableProximity
-            label={'Manage tasks and schedules with ease.'}
+            label={'Run your day. From anywhere. Effortlessly.'}
             className={'variable-proximity-d'}
             fromFontVariationSettings="'wght' 200, 'opsz' 30"
             toFontVariationSettings="'wght' 700, 'opsz' 40"
@@ -23,9 +23,9 @@ const StudentsInfo: React.FC = () => {
           {/* First Card (Video on Right) */}
           <div className="students-info-card student-info-card-1-top">
             <div className="students-info-text">
-              <h3 className="students-card-title">Optimize your workflow.</h3>
+              <h3 className="students-card-title">Smarter Scheduling. Less Thinking.</h3>
               <p className="students-card-description">
-                Stay on track with your daily schedules, assignments, and extracurricular activities.
+                Whether it’s a manual task or an automated agent, Targetist scores, schedules, and reschedules everything — without you lifting a finger.
               </p>
             </div>
 
@@ -59,9 +59,9 @@ const StudentsInfo: React.FC = () => {
             </div>
 
             <div className="students-info-text">
-              <h3 className="students-card-title">Boost Your Productivity.</h3>
+              <h3 className="students-card-title">Say it once. Let AI handle the rest.</h3>
               <p className="students-card-description">
-                Achieve more with intelligent scheduling and time management features.
+                Infinity transforms everyday thoughts into self-running workflows — right from your phone.
               </p>
             </div>
           </div>
