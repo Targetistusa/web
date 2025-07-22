@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 .onboarding-container {
   background-color: #ffffff;
   padding: 4rem 8rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .onboarding-heading {
-  font-size: 3rem;
+  font-family: "Newsreader", serif !important;
+  font-size: 5rem !important;
   font-weight: bold;
   margin-bottom: 2rem;
   color: #000;
+  text-align: center;
+}
+
+.onboarding-subheading {
+  font-size: 1.6rem !important;
+  margin-bottom: 2rem;
+  color: #00000048;
   text-align: center;
 }
 
@@ -32,12 +40,7 @@
   max-width: 450px;
 }
 
-.onboarding-subheading {
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #000;
-}
+
 
 .onboarding-paragraph {
   color: #555;

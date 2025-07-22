@@ -9,20 +9,23 @@ import FeatureCard from './components/FeatureCard';
 import OnboardingSection from './components/OnboardingSection';
 import DocumentsSection from './components/DocSection';
 //import TextReveal from './components/TextReveal';
+import { ReactIconProvider } from './context/ReactIconContext';
 
 const App = () => {
   return (
-    <div className="App">
-      <Navbar />
-      <Home />
-      <Cal/>
-      <StudentsInfo/>
-      <OnboardingSection/>
-      <DocumentsSection/>
-      <FeatureCard/>
+    <ReactIconProvider>
+      <div className="App">
+        <Navbar />
+        <Home />
+        <Cal/>
+        <StudentsInfo/>
+        <OnboardingSection/>
+        <DocumentsSection/>
+        <FeatureCard/>
 
-      <Footer/>
-    </div>
+        <Footer/>
+      </div>
+    </ReactIconProvider>
   );
 };
 
