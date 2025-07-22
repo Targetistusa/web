@@ -1,9 +1,7 @@
 import React, {useRef} from 'react';
 import '../styles/Home.css';
-import Squares from '../Squares/Squares';
 import FadeContent from '../FadeContent/FadeContent';
-import ShinyText from '../ShinyText/ShinyText';
-import StarBorder from '../StarBorder/StarBorder';
+
 import VariableProximity from '../VariableProximity/VariableProximity';
 import DarkVeil from '../DarkVeil/DarkVeil';
 const Home: React.FC = () => {
