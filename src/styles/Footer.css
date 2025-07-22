@@ -38,7 +38,7 @@
 .social-links {
     display: flex;
     flex: 1;
-    gap: 5rem;
+    gap: 3rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -57,6 +57,7 @@
 }
 
 .social-icon:hover {
+    cursor: pointer;
     color: rgba(255, 255, 255, 0.707);
 }
   

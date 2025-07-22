@@ -42,7 +42,7 @@
 
 
 .feature-card-title {
-  font-size: 10rem;
+  font-size: 8rem;
   font-family: 'Newsreader', serif;
   font-weight: 300;
   color: white;
@@ -53,7 +53,7 @@
   font-style: italic;
 }
 
-.install-button {
+.install-button-feature-card {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -61,7 +61,7 @@
   color: black;
   font-weight: 500;
   font-size: 1.2rem;
-  padding: 1.75rem 2.5rem;
+  padding: 1rem 2.5rem;
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
@@ -76,8 +76,8 @@
 
 
 .ios-icon {
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
 

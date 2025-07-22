@@ -56,7 +56,7 @@ const Home: React.FC = () => {
                 window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')
               }
             >
-              <img src="longo.png" alt="Apple" className="ios-icon" />
+              <img src={require('../assets/apple_white.png')} alt="Apple" className="ios-icon" />
               Available on iOS
             </button>
           </div>

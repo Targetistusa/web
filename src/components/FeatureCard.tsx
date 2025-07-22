@@ -14,12 +14,12 @@ const FeatureCard: React.FC = () => {
             <h1 className="feature-card-title">Targetist is <span className='feature-card-title-ital'>here</span></h1>
               
             <button
-              className="install-button"
+              className="install-button-feature-card"
               onClick={() =>
                 window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')
               }
             >
-              <img src="longo.png" alt="Apple" className="ios-icon" />
+              <img src={require('../assets/apple.png')} alt="Apple" className="ios-icon" />
               Get it now
             </button>
           </div>
