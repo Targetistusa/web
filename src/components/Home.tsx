@@ -44,6 +44,11 @@ const Home: React.FC = () => {
               radius={100}
               falloff="exponential"
             />
+
+            {/* Subheading */}
+            <p className="subtitle">
+              Targetist is an infrastructure layer that lets people and AI agents coordinate across tools, workflows, and calendars.
+            </p>
           </div>
 
           <div className="button-container-main">
