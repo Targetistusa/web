@@ -88,6 +88,7 @@
   font-family: "Newsreader", serif !important;
   font-size: 5rem !important;
   text-align: center;
+  font-weight: lighter;
 }
 
 /* === Responsive Adjustments === */
@@ -105,8 +106,10 @@
   .students-info-card,
   .students-info-card.reverse {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    padding:1rem;
+    height: auto;
   }
 
   .students-info-text {
@@ -119,20 +122,31 @@
   }
 
   .students-card-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .students-card-description {
     font-size: 1rem;
   }
+  .variable-proximity-d {
+    font-size: 3rem !important;
+    font-weight: lighter;
+  }
 }
 
 @media (max-width: 480px) {
   .students-card-title {
-    font-size: 1.3rem;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .variable-proximity-d {
+    font-size: 3rem !important;
+    font-weight: lighter;
   }
 
   .students-card-description {
     font-size: 0.95rem;
+    text-align: left;
   }
 }

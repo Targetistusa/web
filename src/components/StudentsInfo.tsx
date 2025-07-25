@@ -7,18 +7,16 @@ const StudentsInfo: React.FC = () => {
 
   return (
     <div className="students-info-section">
-      <div className="students-info-content">
-        <div ref={containerRef} style={{ position: 'relative', marginBottom: "3rem" }}>
-          <VariableProximity
-            label={'Run your day. From anywhere. Effortlessly.'}
-            className={'variable-proximity-d'}
-            fromFontVariationSettings="'wght' 200, 'opsz' 30"
-            toFontVariationSettings="'wght' 700, 'opsz' 40"
-            containerRef={containerRef}
-            radius={100}
-            falloff="gaussian"
-          />
-        </div>
+      <div className="students-info-content" ref={containerRef}>
+        <VariableProximity
+          label={'Run your day. From anywhere. Effortlessly.'}
+          className={'variable-proximity-d'}
+          fromFontVariationSettings="'wght' 200, 'opsz' 30"
+          toFontVariationSettings="'wght' 700, 'opsz' 40"
+          containerRef={containerRef}
+          radius={100}
+          falloff="gaussian"
+        />
         <div style={{display: 'flex', flex:1, flexDirection: 'column', borderRadius:"2rem"}}>
           {/* First Card (Video on Right) */}
           <div className="students-info-card student-info-card-1-top">

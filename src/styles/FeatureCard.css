@@ -84,14 +84,28 @@
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
+  .feature-card-container {
+    padding: 1.5rem;
+  }
   .feature-card-title {
-    font-size: 2rem;
+    font-size: 3rem !important;
   }
 
   .feature-card {
-    max-width: 300px;
-    aspect-ratio: 2/3;
+    width: 100%;
+    height: 100vh;
+    border-radius: 2rem;
   }
+
+  .install-button-feature-card {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  /* .feature-card {
+    
+  } */
 }
 
 @media (max-width: 480px) {
@@ -99,10 +113,10 @@
     font-size: 1.75rem;
   }
 
-  .feature-card {
+  /* .feature-card {
     max-width: 90%;
     aspect-ratio: 3/4;
-  }
+  } */
 
   .feature-card-wrapper {
     gap: 1rem;

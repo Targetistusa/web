@@ -8,19 +8,19 @@ import { RiCalendarScheduleFill } from "react-icons/ri";
 const Cal: React.FC = () => {
   const headContainerRef=useRef(null)
   return (
-    <div className="new-section-container">
+    <div className="new-section-container"  ref={headContainerRef}>
       {/* Section Header */}
-      <div style={{position: 'relative'}} ref={headContainerRef}>
-        <VariableProximity
-          label={'Infrastructure for Time Orchestration'}
-          className={'header-text'}
-          fromFontVariationSettings="'wght' 200, 'opsz' 30"
-          toFontVariationSettings="'wght' 700, 'opsz' 40"
-          containerRef={headContainerRef}
-          radius={100}
-          falloff="exponential"
-        />
-      </div>
+
+      <VariableProximity
+        label={'Infrastructure for Time Orchestration'}
+        className={'header-text'}
+        fromFontVariationSettings="'wght' 200, 'opsz' 30"
+        toFontVariationSettings="'wght' 700, 'opsz' 40"
+        containerRef={headContainerRef}
+        radius={100}
+        falloff="exponential"
+      />
+
 
       {/* Gray Card Container */}
       <div className="card-container">
@@ -39,7 +39,7 @@ const Cal: React.FC = () => {
         <div className="card-images">
           {/* <img src="/img2.png" alt="Phone 1" className="phone-image1" />
           <img src="/img1.png" alt="Phone 2" className="phone-image2" /> */}
-          <div style={{  position: 'relative', top:'15rem', left: '20rem'}}>
+          <div className={'card-swap-wrapper'}>
             <CardSwap
               cardDistance={60}
               verticalDistance={70}

@@ -33,10 +33,7 @@ const OnboardingSection: React.FC = () => {
             borderRadius:"2rem",
             border: "1px solid rgba(164, 167, 170, 0.433)",
           }}>
-            <img src={val} style={{
-              width:200,
-              height:200
-            }} alt='Integration' />
+            <img src={val} className='integration-image' alt='Integration' />
           </div>
         ))}
       </Marquee>

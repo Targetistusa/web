@@ -9,7 +9,7 @@
 .onboarding-heading {
   font-family: "Newsreader", serif !important;
   font-size: 5rem !important;
-  font-weight: bold;
+  font-weight: lighter;
   margin-bottom: 2rem;
   color: #000;
   text-align: center;
@@ -85,6 +85,11 @@
   color: #666;
 }
 
+.integration-image {
+  width:200px;
+  height:200px;
+}
+
 .avatar {
   background-color: #f0f0f0;
   border-radius: 50%;
@@ -102,11 +107,12 @@
   }
 
   .onboarding-heading {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
+    font-weight: lighter;
   }
 
   .onboarding-subheading {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
   }
 }
 
@@ -114,6 +120,15 @@
   .onboarding-content {
     flex-direction: column;
     align-items: center;
+  }
+
+  .onboarding-heading {
+    font-size: 4rem !important;
+    font-weight: lighter;
+  }
+
+  .onboarding-subheading {
+    font-size: 1rem !important;
   }
 
   .onboarding-text,
@@ -126,22 +141,17 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  .onboarding-paragraph {
+    font-size: 0.95rem;
+  }
 
   .avatar {
     align-self: flex-end;
   }
-}
 
-@media (max-width: 480px) {
-  .onboarding-heading {
-    font-size: 2rem;
-  }
-
-  .onboarding-subheading {
-    font-size: 1.5rem;
-  }
-
-  .onboarding-paragraph {
-    font-size: 0.95rem;
+  .integration-image {
+    width: 140px;
+    height: 140px;
   }
 }
+

@@ -122,6 +122,15 @@
   z-index: 1;
 }
 
+.card-swap-wrapper {
+  position: relative;
+  top: 15rem;
+  left: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .flow-card-1 {
   display: flex;
   flex-direction: column;
@@ -175,38 +184,48 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 2rem 1rem;
+    padding:1rem;
     height: auto;
     overflow: hidden;
   }
 
+  .header-text {
+    font-size: 2.5rem !important;
+    font-weight: lighter;
+  }
+
   .card-content {
-    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
     max-width: 100%;
   }
 
   .card-title,
   .description {
-    text-align: center;
+    text-align: left;
+  }
+
+  .description {
+    font-size: 1rem;
   }
 
   .card-images {
     margin-top: 2rem;
     justify-content: center;
   }
-
-  .phone-image2{
-    display: none;
-  }
-  .phone-image1 {
-    position: static;
-    transform: none;
-    max-width: 90%;
-    transform: translate(0%, 20%);
-  }
-
   .button-container {
     justify-content: center;
   }
+  .demo-image {
+    width: 100px;
+    height: 100px;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .card-swap-wrapper {
+    display: none;
+  }
+
+  
 }
