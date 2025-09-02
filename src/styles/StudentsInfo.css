@@ -10,17 +10,27 @@
 }
 
 .students-info-content {
-  max-width: 1100px;
+  max-width: 1200px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0rem;
+}
+
+.student-info-card-list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border: 2px solid rgba(164, 167, 170, 0.433);
+  border-radius: 2rem;
+    width: 100%;
 }
 
 /* === Info Card Block === */
 .students-info-card {
   background-color: #f5f5f5;
-  padding: 2rem;
+  padding: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,18 +39,14 @@
   gap: 2rem;
 }
 
-.student-info-card-1-top {
+.student-info-card-top {
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
-  border: 2px solid rgba(164, 167, 170, 0.433);
-  border-bottom: none;
-}
+} 
 
-.student-info-card-2-bottom {
+.student-info-card-bottom {
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
-  border: 2px solid rgba(164, 167, 170, 0.433);
-  border-top: none;
 }
 
 /* === Text Block === */
@@ -84,9 +90,11 @@
 
 /* === Header Animation Styling === */
 .variable-proximity-d {
-  margin-bottom: 2rem;
   font-family: "Newsreader", serif !important;
   font-size: 5rem !important;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #000;
   text-align: center;
 }
 

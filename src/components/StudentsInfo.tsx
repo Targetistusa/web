@@ -10,7 +10,7 @@ const StudentsInfo: React.FC = () => {
       <div className="students-info-content">
         <div ref={containerRef} style={{ position: 'relative', marginBottom: "3rem" }}>
           <VariableProximity
-            label={'Run your day. From anywhere. Effortlessly.'}
+            label={'Automate anything, naturally.'}
             className={'variable-proximity-d'}
             fromFontVariationSettings="'wght' 200, 'opsz' 30"
             toFontVariationSettings="'wght' 700, 'opsz' 40"
@@ -19,13 +19,13 @@ const StudentsInfo: React.FC = () => {
             falloff="gaussian"
           />
         </div>
-        <div style={{display: 'flex', flex:1, flexDirection: 'column', borderRadius:"2rem"}}>
+        <div className='student-info-card-list'>
           {/* First Card (Video on Right) */}
-          <div className="students-info-card student-info-card-1-top">
+          <div className="students-info-card student-info-card-top">
             <div className="students-info-text">
-              <h3 className="students-card-title">Smarter Scheduling. Less Thinking.</h3>
+              <h3 className="students-card-title">From Idea to Action, Instantly</h3>
               <p className="students-card-description">
-                Whether it’s a manual task or an automated agent, Targetist scores, schedules, and reschedules everything — without you lifting a finger.
+                Targetist turns your instructions into automated actions, orchestrating tasks across apps so you don’t waste time switching contexts.
               </p>
             </div>
 
@@ -37,14 +37,14 @@ const StudentsInfo: React.FC = () => {
                 muted 
                 playsInline
               >
-                <source src={require("../assets/complete.mp4")} type="video/mp4" />
+                <source src={require('../assets/typingvideo.mp4')} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
           </div>
 
           {/* Second Card (Video on Left) */}
-          <div className="students-info-card student-info-card-2-bottom">
+          <div className="students-info-card">
             <div className="students-info-video">
               <video 
                 className="video-element"
@@ -53,16 +53,37 @@ const StudentsInfo: React.FC = () => {
                 muted 
                 playsInline
               >
-                <source src={require("../assets/Complete2.mp4")} type="video/mp4" />
+                <source src={require("../assets/workflowVideo.mp4")} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
 
             <div className="students-info-text">
-              <h3 className="students-card-title">Say it once. Let AI handle the rest.</h3>
+              <h3 className="students-card-title">Plans That Know What to Use.</h3>
               <p className="students-card-description">
-                Infinity transforms everyday thoughts into self-running workflows — right from your phone.
+                Behind every plan, Targetist spins up a team of specialized AI agents. They divide the work, pick the right tools, and execute in sync, turning your idea into a fully managed workflow.
               </p>
+            </div>
+          </div>
+          <div className="students-info-card student-info-card-bottom">
+            <div className="students-info-text">
+              <h3 className="students-card-title">Work That Works Itself.</h3>
+              <p className="students-card-description">
+                While you focus on the big picture, Targetist’s agents handle the execution, running tasks in the background, adapting in real time, and keeping everything on track.
+              </p>
+            </div>
+
+            <div className="students-info-video">
+              <video 
+                className="video-element"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+              >
+                <source src={require("../assets/doneVideo.mp4")} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
