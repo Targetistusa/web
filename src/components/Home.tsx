@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       <div className="squares-background">
         <DarkVeil
           speed={2.2}
-          hueShift={342}
+          hueShift={18}
           noiseIntensity={0.11}
           scanlineFrequency={5}
           scanlineIntensity={1}
@@ -45,21 +45,11 @@ const Home: React.FC = () => {
 
             {/* Subheading */}
             <p className="subtitle">
-              Targetist is an infrastructure layer that lets people and AI agents coordinate across tools, workflows, and calendars.
+              Fibonacci is an infrastructure layer that lets people and AI agents coordinate across tools, workflows, and calendars.
             </p>
           </div>
-
-          <div className="button-container-main">
-            <button
-              className="install-button"
-              onClick={() =>
-                window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')
-              }
-            >
-              <img src={require('../assets/apple_white.png')} alt="Apple" className="ios-icon" />
-              Available on iOS
-            </button>
-          </div>
+          
+          {/* Removed iOS button */}
 
         </div>
       </FadeContent>

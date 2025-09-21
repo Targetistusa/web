@@ -11,17 +11,8 @@ const FeatureCard: React.FC = () => {
               backgroundImage: `url(${require('../assets/parallax_image.png')})`,
             }}
           >
-            <h1 className="feature-card-title">Targetist is <span className='feature-card-title-ital'>here</span></h1>
-              
-            <button
-              className="install-button-feature-card"
-              onClick={() =>
-                window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')
-              }
-            >
-              <img src={require('../assets/apple.png')} alt="Apple" className="ios-icon" />
-              Get it now
-            </button>
+            <h1 className="feature-card-title">Fibonacci is <span className='feature-card-title-ital'>here</span></h1>
+            {/* Removed the iOS button */}
           </div>
       </div>
     </div>
