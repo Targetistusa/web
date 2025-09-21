@@ -10,7 +10,7 @@ const StudentsInfo: React.FC = () => {
       <div className="students-info-content">
         <div ref={containerRef} style={{ position: 'relative', marginBottom: "3rem" }}>
           <VariableProximity
-            label={'Automate anything, naturally.'}
+            label={'Automate anything.'}
             className={'variable-proximity-d'}
             fromFontVariationSettings="'wght' 200, 'opsz' 30"
             toFontVariationSettings="'wght' 700, 'opsz' 40"

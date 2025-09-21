@@ -24,8 +24,11 @@ const Navbar = () => {
         <div className="navbar-flex">
           {/* Logo and Title */}
           <div className="navbar-logo">
-            <img src="longo.png" alt="Logo" className="logo-img" />
-            {/* <span className="navbar-title">Targetist</span> */}
+            <img src="fibonacci_logo.png" alt="Logo" className="logo-img" />
+            <div className='navbar-title-container'>
+              <span className="navbar-title-f">f</span>
+              <span className="navbar-title">ibonacci</span>
+            </div>
           </div>
 
           {/* CTA Button */}
