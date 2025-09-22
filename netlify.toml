@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "https://fibonacci.today/:spla≈t"
-  status = 301
-  force = true
