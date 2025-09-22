@@ -37,7 +37,7 @@
 .title-1 {
   font-family: "Newsreader", serif !important;
   font-size: 5rem !important;
-  color: #fff;
+  color: #ffffffc4;
   text-align: center;
   font-weight: lighter;
 }
@@ -46,14 +46,14 @@
   font-family: "Newsreader", serif !important;
   font-size: 5rem !important;
   font-style: italic;
-  color: #fff;
+  color: #ffffffc4;
   text-align: center;
   font-weight: lighter;
   white-space: nowrap;
 }
 
 .subtitle {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
   margin-top: 1rem;

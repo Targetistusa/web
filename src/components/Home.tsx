@@ -39,7 +39,7 @@ const Home: React.FC = () => {
               falloff="exponential"
             />
             <VariableProximity
-              label={' naturally!'}
+              label={' naturally'}
               className={'title-2'}
               fromFontVariationSettings="'wght' 200, 'opsz' 30"
               toFontVariationSettings="'wght' 700, 'opsz' 40"
