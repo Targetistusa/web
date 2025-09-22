@@ -3,20 +3,25 @@ import '../styles/Home.css';
 import FadeContent from '../FadeContent/FadeContent';
 
 import VariableProximity from '../VariableProximity/VariableProximity';
-import DarkVeil from '../DarkVeil/DarkVeil';
+import Threads from '../Threads/Threads';
 const Home: React.FC = () => {
   const containerRef = useRef(null); 
   return (
     <div className="container">
       {/* Squares as animated background */}
       <div className="squares-background">
-        <DarkVeil
+        {/* <DarkVeil
           speed={2.2}
-          hueShift={342}
+          hueShift={18}
           noiseIntensity={0.11}
           scanlineFrequency={5}
           scanlineIntensity={1}
           warpAmount={1}
+        /> */}
+        <Threads
+          amplitude={2.5}
+          distance={0.8}
+          enableMouseInteraction={true}
         />
       </div>
 
@@ -25,7 +30,7 @@ const Home: React.FC = () => {
         <div className="content-wrapper">
           <div ref={containerRef} style={{position: 'relative'}}>
             <VariableProximity
-              label={'Schedule at the speed of'}
+              label={'Run flows with AI Agents,'}
               className={'title-1'}
               fromFontVariationSettings="'wght' 200, 'opsz' 30"
               toFontVariationSettings="'wght' 700, 'opsz' 40"
@@ -34,7 +39,7 @@ const Home: React.FC = () => {
               falloff="exponential"
             />
             <VariableProximity
-              label={' thought'}
+              label={' naturally'}
               className={'title-2'}
               fromFontVariationSettings="'wght' 200, 'opsz' 30"
               toFontVariationSettings="'wght' 700, 'opsz' 40"
@@ -45,21 +50,11 @@ const Home: React.FC = () => {
 
             {/* Subheading */}
             <p className="subtitle">
-              Targetist is an infrastructure layer that lets people and AI agents coordinate across tools, workflows, and calendars.
+              Fibonacci is an infrastructure layer that lets people and AI agents <br/> coordinate across tools, workflows, and calendars.
             </p>
           </div>
-
-          <div className="button-container-main">
-            <button
-              className="install-button"
-              onClick={() =>
-                window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')
-              }
-            >
-              <img src={require('../assets/apple_white.png')} alt="Apple" className="ios-icon" />
-              Available on iOS
-            </button>
-          </div>
+          
+          {/* Removed iOS button */}
 
         </div>
       </FadeContent>

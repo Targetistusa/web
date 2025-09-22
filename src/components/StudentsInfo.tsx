@@ -10,7 +10,7 @@ const StudentsInfo: React.FC = () => {
       <div className="students-info-content">
         <div ref={containerRef} style={{ position: 'relative', marginBottom: "3rem" }}>
           <VariableProximity
-            label={'Automate anything, naturally.'}
+            label={'Automate anything.'}
             className={'variable-proximity-d'}
             fromFontVariationSettings="'wght' 200, 'opsz' 30"
             toFontVariationSettings="'wght' 700, 'opsz' 40"
@@ -25,7 +25,7 @@ const StudentsInfo: React.FC = () => {
             <div className="students-info-text">
               <h3 className="students-card-title">From Idea to Action, Instantly</h3>
               <p className="students-card-description">
-                Targetist turns your instructions into automated actions, orchestrating tasks across apps so you don’t waste time switching contexts.
+                Fibonacci turns your instructions into automated actions, orchestrating tasks across apps so you don’t waste time switching contexts.
               </p>
             </div>
 
@@ -61,7 +61,7 @@ const StudentsInfo: React.FC = () => {
             <div className="students-info-text">
               <h3 className="students-card-title">Plans That Know What to Use.</h3>
               <p className="students-card-description">
-                Behind every plan, Targetist spins up a team of specialized AI agents. They divide the work, pick the right tools, and execute in sync, turning your idea into a fully managed workflow.
+                Behind every plan, Fibonacci spins up a team of specialized AI agents. They divide the work, pick the right tools, and execute in sync, turning your idea into a fully managed workflow.
               </p>
             </div>
           </div>
@@ -69,7 +69,7 @@ const StudentsInfo: React.FC = () => {
             <div className="students-info-text">
               <h3 className="students-card-title">Work That Works Itself.</h3>
               <p className="students-card-description">
-                While you focus on the big picture, Targetist’s agents handle the execution, running tasks in the background, adapting in real time, and keeping everything on track.
+                While you focus on the big picture, Fibonacci's agents handle the execution, running tasks in the background, adapting in real time, and keeping everything on track.
               </p>
             </div>
 

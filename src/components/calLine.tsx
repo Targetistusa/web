@@ -28,10 +28,10 @@ const Cal: React.FC = () => {
         <div className="card-content">
           <h3 className="card-title">Effortless and on the go.</h3>
           <p className="description">
-            Targetist replaces chaos with intelligent coordination — sequencing tasks, tools, and agents in real-time. Whether it's human work or automated workflows, everything runs smoothly and lands in the right time.
+            Fibonacci replaces chaos with intelligent coordination — sequencing tasks, tools, and agents in real-time. Whether it's human work or automated workflows, everything runs smoothly and lands in the right time.
           </p>
           <div className="button-container">
-            <button className="app-store-button" onClick={() => window.open('https://apps.apple.com/us/app/targetist/id6523418234', '_blank')}> Meet the Vision </button>
+            <button className="app-store-button" onClick={() => window.open('https://fibonacci.today', '_blank')}> Meet the Vision </button>
           </div>
         </div>
 

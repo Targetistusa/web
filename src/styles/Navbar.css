@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+
 .navbar {
   position: fixed;
-  top: 1rem;
+
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -19,17 +22,20 @@
 }
 
 .navbar.hidden {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
-  opacity: 0;
+  width: 100vw;
+
+  height: auto;
+  background: rgba(52, 51, 51, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  opacity: 1;
   pointer-events: none;
   box-shadow: none;
 }
 
 .navbar.scrolled {
   width: 50%;
+  top: 1rem;
   height: auto;
   border-radius: 9999px;
   background: rgba(52, 51, 51, 0.5);
@@ -47,15 +53,21 @@
   padding: 0 1rem;
 }
 
+
 .navbar-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  opacity: 0;
-  transform: translateY(-10px);
+  opacity: 1;
   transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
 }
+
+.navbar.hidden .navbar-flex {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .navbar.scrolled .navbar-flex {
   opacity: 1;
@@ -69,16 +81,56 @@
 }
 
 .logo-img {
-  height: 40px;
+  height: 50px;
   width: auto;
   border-radius: 0.4rem;
 }
 
-.navbar-title {
-  font-family: "Roboto", sans-serif;
+.navbar-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 0.28rem;
+}
+
+.navbar-title-f {
+  font-family: "Newsreader", serif;
   font-size: 1.5rem;
   font-weight: bold;
+  font-style: italic;
   color: #FFF;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 
+    opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.navbar.hidden .navbar-flex .navbar-title-f {
+  opacity: 1;
+
+}
+
+.navbar.scrolled .navbar-flex .navbar-title-f {
+  opacity: 0;
+}
+
+.navbar-title {
+  font-family: "Helvetica", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #FFF;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 
+    opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.navbar.hidden .navbar-flex .navbar-title {
+  opacity: 1;
+
+}
+
+.navbar.scrolled .navbar-flex .navbar-title {
+  opacity: 0;
 }
 
 .button-download {

@@ -6,9 +6,9 @@ const DockFooter: React.FC = () => {
         <footer className="footer-container">
 
             <div className='footer-company-name-container'>
-                <h4 className='footer-company-name'> © 2025 Targetist</h4>
+                <h4 className='footer-company-name'> © 2025 Fibonacci</h4> {/* Changed the company name here */ }
             </div>            
-
+            {/* Social Media Links [note that we need to change all these] */}
             <div className="social-links">
                 <a href="https://www.instagram.com/targetistusa/" target="_blank" rel="noopener noreferrer" className="social-icon">
                     Instagram
