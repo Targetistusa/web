@@ -21,7 +21,6 @@
         linear-gradient(90deg, transparent 22%, #06449c 23.5%, #06449c 24.5%, transparent 24.5%, transparent 75.5%, #06449c 75.5%, #06449c 76.5%, transparent 76.5%);
     background-size: 80px 80px;
     pointer-events: none;
-    will-change: transform;
     min-height: 800px;
 }
 
@@ -42,7 +41,6 @@
     align-items: flex-end;
     min-height: 340px;
     gap: 2rem;
-    will-change: transform;
 }
 
 /* Logo Section - Left Bottom */

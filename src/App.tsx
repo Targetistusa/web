@@ -9,6 +9,7 @@ import StudentsInfo from './components/StudentsInfo';
 import FeatureCard from './components/FeatureCard';
 import OnboardingSection from './components/OnboardingSection';
 import DocumentsSection from './components/DocSection';
+import LoadingScreen from './components/LoadingScreen';
 //import TextReveal from './components/TextReveal';
 import { ReactIconProvider } from './context/ReactIconContext';
 import GradualBlur from './GradualBlur/GradualBlur';
@@ -30,6 +31,7 @@ const App = () => {
   return (
     <ReactIconProvider>
       <div className="App">
+        <LoadingScreen />
         <Navbar />
         <Home />
         <Cal/>

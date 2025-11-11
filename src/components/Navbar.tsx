@@ -26,8 +26,9 @@ const Navbar = () => {
           <div className="navbar-logo">
             <img src="fibonacci_logo.png" alt="Logo" className="logo-img" />
             <div className='navbar-title-container'>
-              <span className="navbar-title-f">f</span>
-              <span className="navbar-title">ibonacci</span>
+              <span className="navbar-title-f">
+                <span className="fibonacci-fn">f</span>ibonacci
+              </span>
             </div>
           </div>
 
