@@ -4,32 +4,22 @@ import '../styles/Footer.css';
 const DockFooter: React.FC = () => {
     return (
         <footer className="footer-container">
-
-            <div className='footer-company-name-container'>
-                <h4 className='footer-company-name'> © 2025 Fibonacci</h4> {/* Changed the company name here */ }
-            </div>            
-            {/* Social Media Links [note that we need to change all these] */}
-            <div className="social-links">
-                <a href="https://www.instagram.com/targetistusa/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    Instagram
-                </a>
-                <a href="https://www.linkedin.com/company/targetist/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    Linkedin
-                </a>
-                <a href="https://www.youtube.com/channel/UC07vnXmM-V7FUWF3sYFgwwA" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    Youtube
-                </a>
-                <a href="https://x.com/targetistusa" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    X 
-                </a>
-            </div>
-
-
-            {/* Footer Links */}
-            <div className="footer-links">
-                <a href="https://targetist.io/privacy-policy.html">Privacy</a>
-            </div>
+            <div className="footer-grid-background"></div>
             
+            <div className="footer-content">
+                <div className="footer-blue-section">
+                    <div className="footer-logo-section">
+                        <img src="fibonacci_logo.png" alt="Fibonacci" className="footer-logo" />
+                        <span className="footer-company-name">
+                            <span className="fibonacci-f">f</span>ibonacci
+                        </span>
+                    </div>
+
+                    <div className="footer-copyright">
+                        <p>© 2025 Fibonacci. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
         </footer>
     );
 };

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/ResourcesModal.css';
 import '../styles/Navbar.css';
 import { isMobile, isTablet, isIOS } from 'react-device-detect';
@@ -6,6 +7,7 @@ import { isMobile, isTablet, isIOS } from 'react-device-detect';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,16 +28,23 @@ const Navbar = () => {
           <div className="navbar-logo">
             <img src="fibonacci_logo.png" alt="Logo" className="logo-img" />
             <div className='navbar-title-container'>
-              <span className="navbar-title-f">f</span>
-              <span className="navbar-title">ibonacci</span>
+              <span className="navbar-title-f">
+                <span className="fibonacci-fn">f</span>ibonacci
+              </span>
             </div>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           {!isIOS && !isMobile && !isTablet && (
             <div className="navbar-cta">
               <button
-                className="button-download"
+                className="button-nav"
+                onClick={() => navigate('/sequence')}
+              >
+                Sequence
+              </button>
+              <button
+                className="button-nav"
                 onClick={() =>
                   window.open('https://docs.targetist.io/', '_blank')
                 }
