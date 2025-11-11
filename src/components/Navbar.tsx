@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/ResourcesModal.css';
 import '../styles/Navbar.css';
 import { isMobile, isTablet, isIOS } from 'react-device-detect';
@@ -6,6 +7,7 @@ import { isMobile, isTablet, isIOS } from 'react-device-detect';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,9 +39,7 @@ const Navbar = () => {
             <div className="navbar-cta">
               <button
                 className="button-nav"
-                onClick={() =>
-                  window.open('https://sequence.fibonacci.app', '_blank')
-                }
+                onClick={() => navigate('/sequence')}
               >
                 Sequence
               </button>
