@@ -19,7 +19,7 @@ const OnboardingSection: React.FC = () => {
       <VariableProximity
         label={'Composable Integration Layer'}
         className={'onboarding-heading'}
-        fromFontVariationSettings="'wght' 200, 'opsz' 30"
+        fromFontVariationSettings="'wght' 600, 'opsz' 30"
         toFontVariationSettings="'wght' 700, 'opsz' 40"
         containerRef={containerRef}
         radius={100}

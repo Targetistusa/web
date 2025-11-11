@@ -1,6 +1,7 @@
 // App.tsx
 import React, {useEffect} from 'react';
 import Home from './components/Home';
+import SmoothScroll from './components/SmoothScroll';
 import Cal from './components/calLine';
 import Features from './components/Features';
 import Navbar from "./components/Navbar";
@@ -32,12 +33,13 @@ const App = () => {
     <ReactIconProvider>
       <div className="App">
         <LoadingScreen />
+        <SmoothScroll />
         <Navbar />
         <Home />
         <Cal/>
         <Features />
         {/* <StudentsInfo/> */}
-        {/* <OnboardingSection/> */}
+        <OnboardingSection/>
         {/* <DocumentsSection/> */}
         {/* <FeatureCard/> */}
 
