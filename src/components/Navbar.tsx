@@ -31,11 +31,19 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           {!isIOS && !isMobile && !isTablet && (
             <div className="navbar-cta">
               <button
-                className="button-download"
+                className="button-nav"
+                onClick={() =>
+                  window.open('https://sequence.fibonacci.app', '_blank')
+                }
+              >
+                Sequence
+              </button>
+              <button
+                className="button-nav"
                 onClick={() =>
                   window.open('https://docs.targetist.io/', '_blank')
                 }

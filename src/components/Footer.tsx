@@ -1,35 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Footer.css';
 
 const DockFooter: React.FC = () => {
+    const [scrollY, setScrollY] = useState(0);
+    const footerRef = useRef<HTMLDivElement>(null);
+    const [footerOffset, setFooterOffset] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        if (footerRef.current) {
+            const rect = footerRef.current.getBoundingClientRect();
+            const elementTop = window.scrollY + rect.top;
+            setFooterOffset(elementTop);
+        }
+    }, []);
+
+    // Calculate parallax offset for grid background (slower movement)
+    const gridParallax = Math.max(0, scrollY - footerOffset) * 0.5;
+    
+    // Calculate parallax offset for blue section (faster movement)
+    const cardParallax = Math.max(0, scrollY - footerOffset) * 0.3;
+
     return (
-        <footer className="footer-container">
-
-            <div className='footer-company-name-container'>
-                <h4 className='footer-company-name'> © 2025 Fibonacci</h4> {/* Changed the company name here */ }
-            </div>            
-            {/* Social Media Links [note that we need to change all these] */}
-            <div className="social-links">
-                <a href="https://www.instagram.com/targetistusa/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    Instagram
-                </a>
-                <a href="https://www.linkedin.com/company/targetist/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    Linkedin
-                </a>
-                <a href="https://www.youtube.com/channel/UC07vnXmM-V7FUWF3sYFgwwA" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    Youtube
-                </a>
-                <a href="https://x.com/targetistusa" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    X 
-                </a>
-            </div>
-
-
-            {/* Footer Links */}
-            <div className="footer-links">
-                <a href="https://targetist.io/privacy-policy.html">Privacy</a>
-            </div>
+        <footer className="footer-container" ref={footerRef}>
+            <div 
+                className="footer-grid-background"
+                style={{
+                    transform: `translateY(${gridParallax}px)`
+                }}
+            ></div>
             
+            <div className="footer-content">
+                <div 
+                    className="footer-blue-section"
+                    style={{
+                        transform: `translateY(${cardParallax}px)`
+                    }}
+                >
+                    <div className="footer-logo-section">
+                        <img src="fibonacci_logo.png" alt="Fibonacci" className="footer-logo" />
+                        <span className="footer-company-name">
+                            <span className="fibonacci-f">f</span>ibonacci
+                        </span>
+                    </div>
+
+                    <div className="footer-copyright">
+                        <p>© 2025 Fibonacci. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
         </footer>
     );
 };

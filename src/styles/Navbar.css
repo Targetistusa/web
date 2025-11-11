@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
-
 .navbar {
   position: fixed;
-
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -23,7 +21,6 @@
 
 .navbar.hidden {
   width: 100vw;
-
   height: auto;
   background: rgba(52, 51, 51, 0.5);
   backdrop-filter: blur(10px);
@@ -53,7 +50,6 @@
   padding: 0 1rem;
 }
 
-
 .navbar-flex {
   display: flex;
   justify-content: space-between;
@@ -67,7 +63,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .navbar.scrolled .navbar-flex {
   opacity: 1;
@@ -107,7 +102,6 @@
 
 .navbar.hidden .navbar-flex .navbar-title-f {
   opacity: 1;
-
 }
 
 .navbar.scrolled .navbar-flex .navbar-title-f {
@@ -124,16 +118,24 @@
   transition: 
     opacity 0.5s cubic-bezier(0.4,0,0.2,1);
 }
+
 .navbar.hidden .navbar-flex .navbar-title {
   opacity: 1;
-
 }
 
 .navbar.scrolled .navbar-flex .navbar-title {
   opacity: 0;
 }
 
-.button-download {
+/* CTA Buttons Container */
+.navbar-cta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Navigation Buttons */
+.button-nav {
   background: transparent;
   color: white;
   font-weight: 500;
@@ -142,12 +144,12 @@
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.9rem;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.button-download:hover,
-.button-download:focus {
+.button-nav:hover,
+.button-nav:focus {
   opacity: 0.7;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .mobile-menu {
@@ -161,7 +163,7 @@
     justify-content: space-between;
   }
 
-  .button-download {
+  .navbar-cta {
     display: none;
   }
 }

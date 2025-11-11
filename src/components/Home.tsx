@@ -1,61 +1,77 @@
-import React, {useRef} from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Home.css';
 import FadeContent from '../FadeContent/FadeContent';
 
-import VariableProximity from '../VariableProximity/VariableProximity';
-import Threads from '../Threads/Threads';
 const Home: React.FC = () => {
-  const containerRef = useRef(null); 
+  const [scrollY, setScrollY] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleWaitlistClick = () => {
+    // Add your waitlist signup logic here
+    console.log('Join waitlist clicked');
+  };
+
+  // Calculate color transition (0 to 1, where 1 means fully transitioned)
+  const transitionProgress = Math.min(scrollY / 400, 1);
+
+  // Interpolate colors
+  const bgColor = `rgb(${Math.round(6 + (255 - 6) * transitionProgress)}, ${Math.round(68 + (255 - 68) * transitionProgress)}, ${Math.round(156 + (255 - 156) * transitionProgress)})`;
+  const headlineColor = `rgb(${Math.round(255 - (255 - 6) * transitionProgress)}, ${Math.round(255 - (255 - 68) * transitionProgress)}, ${Math.round(255 - (255 - 156) * transitionProgress)})`;
+  const subtitleColor = `rgba(${Math.round(255 - (255 - 6) * transitionProgress)}, ${Math.round(255 - (255 - 68) * transitionProgress)}, ${Math.round(255 - (255 - 156) * transitionProgress)}, ${0.7 - transitionProgress * 0.4})`;
+
   return (
-    <div className="container">
-      {/* Squares as animated background */}
-      <div className="squares-background">
-        {/* <DarkVeil
-          speed={2.2}
-          hueShift={18}
-          noiseIntensity={0.11}
-          scanlineFrequency={5}
-          scanlineIntensity={1}
-          warpAmount={1}
-        /> */}
-        <Threads
-          amplitude={2.5}
-          distance={0.8}
-          enableMouseInteraction={true}
-        />
-      </div>
-
-      {/* Fade-in text and CTA on top */}
+    <div 
+      className="hero-container"
+      style={{
+        backgroundColor: bgColor,
+        transition: 'background-color 0.05s linear'
+      }}
+    >
       <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-        <div className="content-wrapper">
-          <div ref={containerRef} style={{position: 'relative'}}>
-            <VariableProximity
-              label={'Run flows with AI Agents,'}
-              className={'title-1'}
-              fromFontVariationSettings="'wght' 200, 'opsz' 30"
-              toFontVariationSettings="'wght' 700, 'opsz' 40"
-              containerRef={containerRef}
-              radius={100}
-              falloff="exponential"
-            />
-            <VariableProximity
-              label={' naturally'}
-              className={'title-2'}
-              fromFontVariationSettings="'wght' 200, 'opsz' 30"
-              toFontVariationSettings="'wght' 700, 'opsz' 40"
-              containerRef={containerRef}
-              radius={100}
-              falloff="exponential"
-            />
+        <div className="hero-content">
+          <h1 
+            className="hero-headline"
+            style={{
+              color: headlineColor,
+              transition: 'color 0.05s linear'
+            }}
+          >
+            Building the invisible layer that connects AI and work.
+          </h1>
 
-            {/* Subheading */}
-            <p className="subtitle">
-              Fibonacci is an infrastructure layer that lets people and AI agents <br/> coordinate across tools, workflows, and calendars.
-            </p>
-          </div>
-          
-          {/* Removed iOS button */}
+          <p 
+            className="hero-subtitle"
+            style={{
+              color: subtitleColor,
+              transition: 'color 0.05s linear'
+            }}
+          >
+            Fibonacci is an infrastructure layer for AI agents that integrates with SaaS tools — powering automation, orchestration, and intelligent workflows.
+          </p>
 
+          <button 
+            className="waitlist-button"
+            onClick={handleWaitlistClick}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{
+              backgroundColor: isHovered ? 'transparent' : '#ffffff',
+              color: isHovered ? '#ffffff' : '#06449c',
+              borderColor: isHovered ? '#ffffff' : 'transparent',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            Schedule a call
+          </button>
         </div>
       </FadeContent>
     </div>

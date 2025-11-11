@@ -2,6 +2,7 @@
 import React, {useEffect} from 'react';
 import Home from './components/Home';
 import Cal from './components/calLine';
+import Features from './components/Features';
 import Navbar from "./components/Navbar";
 import Footer from './components/Footer';
 import StudentsInfo from './components/StudentsInfo';
@@ -11,6 +12,7 @@ import DocumentsSection from './components/DocSection';
 //import TextReveal from './components/TextReveal';
 import { ReactIconProvider } from './context/ReactIconContext';
 import GradualBlur from './GradualBlur/GradualBlur';
+
 
 const App = () => {
 
@@ -31,12 +33,13 @@ const App = () => {
         <Navbar />
         <Home />
         <Cal/>
-        <StudentsInfo/>
-        <OnboardingSection/>
-        <DocumentsSection/>
-        <FeatureCard/>
+        <Features />
+        {/* <StudentsInfo/> */}
+        {/* <OnboardingSection/> */}
+        {/* <DocumentsSection/> */}
+        {/* <FeatureCard/> */}
 
-        <GradualBlur
+        {/* <GradualBlur
           target="page"
           position="bottom"
           height="5rem"
@@ -45,7 +48,7 @@ const App = () => {
           curve="bezier"
           exponential={true}
           opacity={1}
-        />
+        /> */}
 
         <Footer/>
       </div>
